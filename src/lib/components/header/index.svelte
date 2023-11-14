@@ -1,21 +1,23 @@
-<script>
+<script lang="ts">
   import Container from '$lib/components/container.svelte'
   import Menu from './menu/index.svelte';
   import '@fontsource/source-serif-pro';
   import { page } from '$app/stores';
 
   let scrollY = 0
-  let bigHeader = false
+  let smallHeader = false
+  let header: any;
 
   // header height depends on:
   // scroll
-  $: bigHeader = !!($page.url.pathname === '/' && scrollY < 42)
+  $: smallHeader = $page.url.pathname !== '/'
+  $: header && header.style.setProperty('--scrollY', scrollY); 
 
 </script>
 
 <svelte:window bind:scrollY={scrollY} />
 
-<header class={`header ${bigHeader?'':'small'}`}> 
+<header bind:this={header} class={`header ${smallHeader?'small':''}`}> 
   <Container>
     <a class={`logo`} href="/#home">juji&nbsp;};</a>
     <Menu />
@@ -23,19 +25,21 @@
 </header>
 
 <style lang="scss">
-
-  @use '$lib/sass/header';
-
+  
   .header{
+    --scrollY: 163;
+    --transition: 300ms;
+
     position: fixed;
     width: 100%;
     top:0;
     left:0;
     padding: var(--pad-y) var(--pad-x);
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
+    padding-bottom: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
+    transition: padding-top var(--transition), padding-bottom var(--transition);
+   
     z-index: 10;
-    transition: padding-top 300ms, padding-bottom 300ms;
     
     &:before{
       content: '';
@@ -44,18 +48,13 @@
       height: 100%;
       top:0;
       left:0;
-      background-color: var(--header-bg);
       transition: background-color 300ms, backdrop-filter 300ms;
-      backdrop-filter: blur(0px);
-      animation: header;
-      animation-duration: 1000ms;
       animation-fill-mode: both;
-      border-bottom: 1px solid transparent;
-
-      /* animation-name: slideUp;
-      animation-duration: 300ms;
-      animation-fill-mode: both;
-      animation-delay: var(--base-anim-delay); */
+      border-bottom: 1px solid var(--header-border-bottom);
+      background-color: var(--header-bg-small);
+      backdrop-filter: blur(3px);
+      opacity: calc(clamp(0, var(--scrollY) / (163 - 42), 1));
+      transition: opacity var(--transition);
     }
   
     
@@ -68,10 +67,10 @@
     .logo{
       font-family: 'Source Serif Pro', sans-serif;
       font-weight: 400;
-      transition: font-size 300ms;
       color: var(--text);
       text-decoration: none;
-      font-size: 4rem;
+      font-size: calc(1rem * (4 - ((4 - 2) * clamp(0, var(--scrollY) / (163 - 42), 1))));
+      transition: font-size var(--transition);
     }
   
     &.small {
