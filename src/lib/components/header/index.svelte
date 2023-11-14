@@ -43,7 +43,11 @@
     padding: var(--pad-y) var(--pad-x);
     padding-top: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
     padding-bottom: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
-    /* transition: padding-top var(--transition), padding-bottom var(--transition); */
+    transition: padding-top var(--transition), padding-bottom var(--transition);
+
+    /* @media not all and (min-resolution: 0.001dpcm) {
+      transition: ;
+    } */
    
     z-index: 10;
     
@@ -60,7 +64,7 @@
       background-color: var(--header-bg-small);
       backdrop-filter: blur(3px);
       opacity: calc(clamp(0, var(--scrollY) / (163 - 42), 1));
-      /* transition: opacity var(--transition); */
+      transition: opacity var(--transition);
     }
   
     
@@ -75,8 +79,15 @@
       font-weight: 400;
       color: var(--text);
       text-decoration: none;
-      font-size: calc(1rem * (4 - ((4 - 2) * clamp(0, var(--scrollY) / (163 - 42), 1))));
-      /* transition: font-size var(--transition); */
+      font-size: 2rem;
+      line-height: calc(1rem * (6 - ((6 - 3.2) * clamp(0, var(--scrollY) / (163 - 42), 1))));
+      scale: calc(1 * (2 - ((2 - 1) * clamp(0, var(--scrollY) / (163 - 42), 1))));
+      translate: 0% calc(1px * (-34 - ((-34 - 0) * clamp(0, var(--scrollY) / (163 - 42), 1))));
+      transform-origin: 0% 0%;
+      transition: 
+          line-height var(--transition), 
+          scale var(--transition), 
+          translate var(--transition);
       animation-name: fadeIn;
       animation-duration: 300ms;
       animation-delay: 100ms;
@@ -96,7 +107,9 @@
       }
   
       .logo {
-        font-size: 2rem;
+        scale: 1;
+        line-height: 3.2rem;
+        translate: 0% 0%;
       }
   
     }

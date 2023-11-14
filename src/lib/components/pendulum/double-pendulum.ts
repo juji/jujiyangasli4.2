@@ -71,7 +71,7 @@ class DoublePendulum {
     this.height = window.innerHeight + additionalHeight
     
     this.lineColor = // is iPhone ?
-      /ipad|iphone|ipod/.test(navigator.userAgent.toLowerCase()) ?
+      /ipad|iphone|ipod|safari/.test(navigator.userAgent.toLowerCase()) ?
       this.iPhoneLine : this.normalLine
 
     this.callback = callback
