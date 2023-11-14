@@ -10,7 +10,7 @@ import * as cleanTextUtils from 'clean-text-utils'
 function clean(txt: string): string{
   console.log(cleanTextUtils.replace)
   // txt = cleanTextUtils.replace.diacritics(txt);
-  txt = cleanTextUtils.replace.smartChars(txt);
+  // txt = cleanTextUtils.replace.smartChars(txt);
   return txt
 }
 
