@@ -1,0 +1,125 @@
+@use 'src/lib/sass/slideLeft';
+@use 'src/lib/sass/fadeIn';
+@use 'src/lib/sass/fadeOut';
+
+
+.container{
+  // overflow: hidden;
+  &:hover{
+    z-index: 10;
+  }
+  &.paused{
+    animation-name: slideLeftBackward, fadeOut;
+    animation-duration: 400ms;
+    animation-fill-mode: both;
+    &.visible{
+      animation-name: slideLeft, fadeIn;
+      animation-play-state: running;
+    }
+  }
+}
+
+.workThumbnail {
+  display: block;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  scale: 1;
+  border: 1px solid rgba(0,0,0,0.5);
+  scroll-margin-top: 200px;
+  position: relative;
+  padding-top: 56.25%;
+  // outline: 1px solid green;
+
+  &>.image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+
+    &>:global(img){
+      position: absolute;
+      overflow: hidden;
+      border-radius: 8px;
+      contain: layout;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left:0;
+      // aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: center top;
+      transition: all 1000ms ease;
+    }
+  }
+
+
+  &:hover{
+    &>.image{
+      &>:global(img){
+        width: 104%;
+        height: 104%;
+        top: -2%;
+        left: -2%;
+      }
+    }
+  }
+    
+  .label, .shadow{
+    position: absolute;
+    bottom: 21px;
+    left: 21px;
+    width: auto;
+    height: 34px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+
+  .shadow{
+    transform: translateZ(0px);
+    background-color: rgba(0,0,0,0.2);
+    overflow: hidden;
+    filter: blur(3px);
+
+    img{
+      width: auto;
+      height: calc(34px - 5px - 5px);
+      object-fit: contain;
+      opacity: 0;
+    }
+  }
+
+  .label{
+    transform: translateZ(30px);
+    background-color: white;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.4);
+
+    img{
+      display: block;
+      background-color: white;
+      position: relative;
+      width: auto;
+      height: calc(34px - 5px - 5px);
+      object-fit: contain;
+      object-position: center center;
+    }
+  }
+
+  &:active {
+    transition: scale 250ms ease, transform 250ms ease;
+    transform: perspective(1000px) !important;
+    scale: 0.98;
+    .label{
+      transform: translateZ(0px);
+    }
+  }
+
+  &:after{
+    content: unset;
+  }
+
+}

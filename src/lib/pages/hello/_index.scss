@@ -1,0 +1,94 @@
+@use '$lib/sass/rubbery';
+@use '$lib/sass/fadeIn';
+@use '$lib/sass/slideUp';
+@use '$lib/sass/slideLeft';
+
+.hello{
+  // border: 1px solid red;
+
+  // logo size + 3rem
+  // min-height: calc(100vh - 4rem - 4rem - 4rem - 3rem);
+  min-height: 100vh;
+  padding-top: 225px;
+  
+  // position: relative;
+  // img.my-image{
+  //   overflow: hidden;
+  //   border-radius: 50%;
+  //   width: 178px;
+  //   height: 178px;
+  //   position: fixed;
+  //   top: calc(50% - 34px);
+  //   left: 250px;
+  //   rotate: -20deg;
+  // }
+
+  transition: opacity 300ms;
+  transition-timing-function: ease-out;
+  opacity: 1;
+
+  &.intersected{
+    transition: opacity 100ms;
+    opacity: 0;
+  }
+
+  p{
+    font-size: 18px;
+    padding-bottom: 5px;
+  }
+
+  --base-anim-delay: 500ms;
+
+  .hellobig{
+    font-size: 34px;
+    margin-bottom: 13px;
+    margin-top: 21px;
+    animation-name: slideUp, fadeIn;
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+    animation-delay: var(--base-anim-delay);
+    font-family: 'Source Code Pro Variable', sans-serif;
+  }
+
+  h1{
+    font-weight: 400;
+  }
+
+  .p1{
+    font-size: 18px;
+    padding-bottom: 5px;
+    animation-name: slideUp, fadeIn;
+    animation-duration: 350ms;
+    animation-fill-mode: both;
+    animation-delay: calc(var(--base-anim-delay) + 100ms);
+    display: block;
+  }
+
+  .p2{
+    font-size: 18px;
+    padding-bottom: 5px;
+    animation-name: slideUp, fadeIn;
+    animation-duration: 400ms;
+    animation-fill-mode: both;
+    animation-delay: calc(var(--base-anim-delay) + 200ms);
+    display: block;
+  }
+
+  .p3{
+    font-size: 18px;
+    padding-bottom: 5px;
+    animation-name: slideUp, fadeIn;
+    animation-duration: 450ms;
+    animation-fill-mode: both;
+    animation-delay: calc(var(--base-anim-delay) + 300ms);
+    display: block;
+  }
+
+  .smiley{
+    font-size: 45px;
+    animation-name: rubbery;
+    animation-duration: 1000ms;
+    animation-delay: calc(var(--base-anim-delay) + 1200ms);
+    animation-fill-mode: both;
+  }
+}

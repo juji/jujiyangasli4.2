@@ -1,0 +1,143 @@
+@use '$lib/sass/fadeIn';
+@use '$lib/sass/fadeOut';
+@use '$lib/sass/slideUp';
+@use '$lib/sass/slideLeft';
+
+.contact{
+  // border: 1px solid red;
+
+  padding-top: var(--pad-top-page);
+  // margin-bottom: 10rem;
+
+  h1{
+    padding-top: 3rem;
+  }
+
+  .email{
+    margin-top: 1rem;
+    margin-bottom: 8px;
+    a{ font-size: 21px; }
+  }
+
+  .city{
+    margin-bottom: 34px;
+  }
+
+  .links{
+    display: flex;
+    a{
+      margin-right: 21px;
+      display: block;
+      scale: 1;
+      transition: scale 200ms ease-out;
+      
+      &:hover {
+        scale: 1.2;
+        &:after{
+          transform: scaleX(0);
+        }
+      }
+
+      &:active {
+        scale: 1;
+      }
+    }
+  }
+
+  &.anim{
+    
+    .h1{
+      animation-name: slideUpBackward, fadeOut;
+      animation-duration: 400ms;
+      animation-fill-mode: both;
+    }
+  
+    .par{
+      animation-name: slideUpBackward, fadeOut;
+      animation-duration: 400ms;
+      animation-delay: 100ms;
+      animation-fill-mode: both;
+    }
+
+    .email{
+      animation-name: slideUpBackward, fadeOut;
+      animation-duration: 400ms;
+      animation-delay: 200ms;
+      animation-fill-mode: both;
+    }
+
+    .city{
+      animation-name: slideUpBackward, fadeOut;
+      animation-duration: 500ms;
+      animation-delay: 300ms;
+      animation-fill-mode: both;
+    }
+
+    .links{
+      #github{
+        animation-name: slideLeftBackward, fadeOut;
+        animation-duration: 400ms;
+        animation-delay: 300ms;
+        animation-fill-mode: both;
+      }
+  
+      #npm{
+        animation-name: slideLeftBackward, fadeOut;
+        animation-duration: 400ms;
+        animation-delay: 400ms;
+        animation-fill-mode: both;
+      }
+  
+      #linkedin{
+        animation-name: slideLeftBackward, fadeOut;
+        animation-duration: 400ms;
+        animation-delay: 500ms;
+        animation-fill-mode: both;
+      }
+  
+      #skype{
+        animation-name: slideLeftBackward, fadeOut;
+        animation-duration: 400ms;
+        animation-delay: 600ms;
+        animation-fill-mode: both;
+      }
+    }
+
+    &.visible{
+      .h1{
+        animation-name: slideUp, fadeIn;
+      }
+  
+      .par{
+        animation-name: slideUp, fadeIn;
+      }
+  
+      .email{
+        animation-name: slideUp, fadeIn;
+      }
+  
+      .city{
+        animation-name: slideUp, fadeIn;
+      }
+  
+      .links{
+        #github{
+          animation-name: slideLeft, fadeIn;
+        }
+    
+        #npm{
+          animation-name: slideLeft, fadeIn;
+        }
+    
+        #linkedin{
+          animation-name: slideLeft, fadeIn;
+        }
+    
+        #skype{
+          animation-name: slideLeft, fadeIn;
+        }
+      }
+    }
+  }
+
+}

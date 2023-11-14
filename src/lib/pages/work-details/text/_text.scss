@@ -1,0 +1,80 @@
+@use '$lib/sass/fadeIn';
+
+.text{
+  animation-name: fadeIn;
+  animation-delay: 600ms;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+
+  position: relative;
+  // background-color: var(--transparent-bg);
+  
+  .content, .visible{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    padding-top: 55px;
+    padding-bottom: 89px; // detect bottom intersection at
+    line-height: 1.63rem;
+    
+    :global(ul),:global(ol){ 
+      margin-left: 1.2rem;
+    }
+
+    :global(p){
+      margin-bottom: 1rem;
+    }
+
+    :global(blockquote) {
+      background-color: #191919;
+      padding: 1.6rem 2rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      margin-bottom: 1rem;
+
+      &:before{
+        font-family: Times New Roman,Times,serif;
+        content: "”";
+        position: absolute;
+        top: 34px;
+        left: 0;
+        font-size: 144px;
+        color: #333;
+        z-index: -1;
+      }
+    }
+
+    :global(blockquote p) {
+      margin:0;
+      padding:0; 
+    }
+  }
+
+  .content{
+    opacity: 0;
+  }
+  .visible{
+    position: absolute;
+    top:0;
+    left:0;
+  }
+
+  @media screen and (min-width: 420px) {
+    .content, .visible{
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .visible.fixed{
+      width: 432px;
+      position: fixed;
+      bottom: 0px;
+      top: auto;
+      height: auto;
+      left: calc(50% + min(var(--max-width),100%) / 2 - 432px);
+    }
+  }
+}
