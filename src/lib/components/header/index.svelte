@@ -3,7 +3,6 @@
   import Menu from './menu/index.svelte';
   import '@fontsource/source-serif-pro';
   import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 
   let scrollY = typeof window === 'undefined' ? 0 : window.scrollY
   let smallHeader = true
