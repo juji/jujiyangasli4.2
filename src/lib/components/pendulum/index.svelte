@@ -4,7 +4,7 @@
   import { page } from '$app/stores';
 
 
-  let scrollY = 42
+  let scrollY = 0
   let img:PendulumImage|null = null
   let started:string|null = null
   let bgOn = true
@@ -16,7 +16,7 @@
   let additionalHeight:number
 
   
-  $: bgOn = scrollY > 42 || $page.url.pathname !== '/'
+  $: bgOn = $page.url.pathname !== '/' || scrollY > 42
   // console.log($page.url.pathname, bgOn)
 
   let timeout:ReturnType<typeof setTimeout>|null = null
