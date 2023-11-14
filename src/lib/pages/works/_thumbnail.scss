@@ -1,4 +1,4 @@
-@use 'src/lib/sass/slideLeft';
+@use 'src/lib/sass/slideUp';
 @use 'src/lib/sass/fadeIn';
 @use 'src/lib/sass/fadeOut';
 
@@ -9,11 +9,13 @@
     z-index: 10;
   }
   &.paused{
-    animation-name: slideLeftBackward, fadeOut;
+    animation-name: slideUpBackward, fadeOut;
     animation-duration: 400ms;
     animation-fill-mode: both;
+    pointer-events: none;
     &.visible{
-      animation-name: slideLeft, fadeIn;
+      pointer-events: auto;
+      animation-name: slideUp, fadeIn;
       animation-play-state: running;
     }
   }

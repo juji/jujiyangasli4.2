@@ -7,11 +7,44 @@
   import IoLogoLinkedin from "svelte-icons-pack/io/IoLogoLinkedin";
   import IoLogoSkype from "svelte-icons-pack/io/IoLogoSkype";
   import ContactForm from './contact-form/index.svelte'
+  import { animEnabled } from '$lib/stores/anim-enabled';
+	import { onMount } from "svelte";
+
+  let visible = false
+  let observed: HTMLDivElement
+
+  onMount(() => {
+    
+    if(typeof IntersectionObserver === 'undefined') {
+      return () => {}
+    }
+
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === observed) {
+          visible = entry.isIntersecting
+        }
+      })
+    },{
+      rootMargin: '1000% 0px -25% 0px'
+    });
+
+    observer.observe(observed);
+
+    return () => {
+      observer.disconnect()
+    }
+
+  })
+
 </script>
 
 
 <div 
-  class={`contact`} 
+  class={`contact`}
+  class:anim={$animEnabled.anim}
+  class:visible={visible}
+  bind:this={observed}
   id="contact">
   
   <h1 class={`h1`}>
@@ -48,7 +81,10 @@
       id={`skype`} href="skype://juji.gunadi?chat"><Icon src={IoLogoSkype} size="2.618rem" /></a>
   </div>
 
-  <ContactForm />
+  <ContactForm 
+    anim={$animEnabled.anim}
+    visible={visible}
+  />
 </div>
 
 <style lang="scss">

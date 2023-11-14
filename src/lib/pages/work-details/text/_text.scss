@@ -1,14 +1,17 @@
 @use '$lib/sass/fadeIn';
 
 .text{
+
+  --pad-height: 0px;
+
   animation-name: fadeIn;
-  animation-delay: 600ms;
+  animation-delay: 100ms;
   animation-duration: 500ms;
   animation-fill-mode: both;
 
   position: relative;
   
-  .content, .visible{
+  .pad, .visible{
     max-width: 600px;
     margin: 0 auto;
     padding: 1rem 2rem;
@@ -51,9 +54,11 @@
     }
   }
 
-  .content{
+  .pad{
     opacity: 0;
+    height: var(--pad-height);
   }
+
   .visible{
     position: absolute;
     top:0;
@@ -61,7 +66,7 @@
   }
 
   @media screen and (min-width: 420px) {
-    .content, .visible{
+    .pad, .visible{
       padding-left: 4rem;
       padding-right: 4rem;
     }

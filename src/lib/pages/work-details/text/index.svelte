@@ -9,6 +9,8 @@
   export let work:WorkContent;
   let observed: HTMLDivElement;
   let fixed = false;
+  let padHeight = 0
+  let text: HTMLDivElement
 
   const {
     content,
@@ -20,6 +22,8 @@
 
   onMount(() => {
     
+    padHeight = text.getBoundingClientRect().height
+
     if(typeof IntersectionObserver === 'undefined') {
       return () => {}
     }
@@ -44,16 +48,13 @@
 
 </script>
 
-<div class={`text`}>
+<div 
+  class={`text`}
+  style={`--pad-height: ${padHeight}px`}
+>
   <Container>
-    <div class='content'>
-      <p><a href={url} rel="noopener noreferrer" target="_blank">{urlText}</a></p>
-      <p>Year: {year}</p>
-      <br />
-      <SvelteMarkdown source={work.content} />
-      <!-- <Lorsum /> -->
-    </div>
-    <div class={`visible`} class:fixed>
+    <div class='pad'></div>
+    <div class={`visible`} bind:this={text} class:fixed>
       <p><a href={url} rel="noopener noreferrer" target="_blank">{urlText}</a></p>
       <p>Year: {year}</p>
       <br />

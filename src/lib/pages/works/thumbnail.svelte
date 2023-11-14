@@ -6,6 +6,9 @@
   import { page } from '$app/stores'
 
   export let work:WorkSingle;
+  export let paused = false
+  export let visible = false
+  export let animationDelay = 0
   
   const { 
     id,
@@ -50,6 +53,9 @@
 </script>
 <div 
   class={`container`}
+  class:paused
+  class:visible
+  style={`animation-delay: ${visible ? animationDelay : 0}ms`}
   >
     <a href={href}
       bind:this={anchor} 

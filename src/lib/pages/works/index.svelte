@@ -4,9 +4,11 @@
   import { animEnabled } from '$lib/stores/anim-enabled';
   import { onNavigate } from '$app/navigation';
   import type { WorkSingle } from "$lib/data/works/types";
-	import { onMount } from "svelte";
 
   export let works: WorkSingle[];
+  let innerHeight = typeof window !== 'undefined' ? window.innerHeight : null;
+  let scrollY = 0
+  let visible = false
   
   // prevent smooth scroll while navigating to work
   onNavigate((navigation) => {
@@ -21,10 +23,24 @@
     }
   })
 
+  $: if(scrollY > 42 && $animEnabled.anim && !visible){
+    visible = true
+  }
+
+  $: if(scrollY < 42 && $animEnabled.anim && visible){
+    visible = false
+  }
+
 </script>
+
+<svelte:window bind:innerHeight bind:scrollY />
+
+<div id="works"></div>
 <div 
   class={`works`}
-  id="works">
+  class:anim={$animEnabled.anim}
+  class:visible
+  style={`--window-height: ${innerHeight}; --scroll-top: ${scrollY}`}>
 
   <h1 class={`h1`}>
     Works
@@ -33,19 +49,49 @@
   <p class={`par`}>Things i did</p>
 
   <div class={`workThumbnails`}>
-    {#each works as work,i }
-    <Thumbnail 
+    {#each works as work, i }
+    <Thumbnail
+      paused={$animEnabled.anim}
+      animationDelay={500 + (i * 100)}
+      visible={visible}
       work={work} />
     {/each}
   </div>
 </div>
 
 <style lang="scss">
-  @use 'src/lib/sass/slideUp';
+  @use 'src/lib/sass/slideLeft';
   @use 'src/lib/sass/fadeIn';
   @use 'src/lib/sass/fadeOut';
 
   .works{
+
+    --window-height: 0;
+    --scroll-top: 0;
+    --translate-top: min(
+      calc( 
+        
+        /* paralax thing */
+        (
+          1 - (
+            min(
+              var(--scroll-top) / var(--window-height),
+              1
+            )
+          )
+        ) *
+
+
+        /* initial position */
+        ( -1px * (
+          var(--window-height) - (
+            /* multiple element height of homepage */
+            /* + 65 (pad-top-page) */
+            (56 + 123 + 21.5 + 24 + 67.5 + 225 ) 
+          )
+        )) + var(--pad-top-page)
+      ), 0px
+    );
 
     padding-top: var(--pad-top-page);
 
@@ -68,30 +114,32 @@
       }
     }
 
-    &.paused{
+    &.anim{
+      translate: 0 var(--translate-top);
+
       h1{
-        animation-name: slideUpBackward, fadeOut;
+        animation-name: slideLeftBackward, fadeOut;
         animation-fill-mode: both;
         animation-duration: 200ms;
         animation-delay: 0ms;
       }
       .par{
-        animation-name: slideUpBackward, fadeOut;
+        animation-name: slideLeftBackward, fadeOut;
         animation-fill-mode: both;
         animation-duration: 200ms;
-        animation-delay: 0ms;
+        animation-delay: 100ms;
       }
 
       &.visible{
         h1{
-          animation-name: slideUp, fadeIn;
-          animation-duration: 400ms;
-          animation-delay: 400ms;
+          animation-name: slideLeft, fadeIn;
+          animation-duration: 200ms;
+          animation-delay: 0ms;
         }
         .par{
-          animation-name: slideUp, fadeIn;
-          animation-duration: 400ms;
-          animation-delay: 600ms;
+          animation-name: slideLeft, fadeIn;
+          animation-duration: 200ms;
+          animation-delay: 100ms;
         }
       }
     }

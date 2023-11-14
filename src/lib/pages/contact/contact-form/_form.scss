@@ -106,7 +106,7 @@
     
   }
 
-  /* &.anim{
+  &.anim{
 
     --delay-init: 800ms;
     h4, label, input, textarea, button, .server-message{
@@ -146,6 +146,6 @@
         animation-name: fadeIn, slideUp;
       }
     }
-  } */
+  }
 
 }

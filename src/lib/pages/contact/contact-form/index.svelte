@@ -5,6 +5,9 @@
 	import type { FormEventHandler } from 'svelte/elements';
   import { onMount } from 'svelte';
   
+  export let anim = false
+  export let visible = false
+
   let success = $page.url.searchParams.get('contactok');
   let error = $page.url.searchParams.get('contacterror');
 
@@ -88,6 +91,8 @@
 </script>
 
 <div class="contact-form" id="contact-form" 
+  class:anim
+  class:visible
   class:sending
 >
   <h4>Send me a Hello!</h4>
