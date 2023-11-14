@@ -5,19 +5,11 @@ import { COOKIE_NAME } from '$lib/vars.server';
 import { rateLimit, LIMIT } from '$lib/rate-limit.server';
 import { error } from '@sveltejs/kit';
 import { contactSchema } from '$lib/pages/contact/contact-form/contact.schema'
-import * as cleanTextUtils from 'clean-text-utils'
 
-function clean(txt: string): string{
-  console.log(cleanTextUtils.replace)
-  // txt = cleanTextUtils.replace.diacritics(txt);
-  // txt = cleanTextUtils.replace.smartChars(txt);
-  return txt
-}
 
-function cleanEmail(txt: string): string{
-  txt = cleanTextUtils.strip.extraSpace(txt);
-  txt = cleanTextUtils.strip.bom(txt);
-  return txt
+function stripBom(txt: string): string{
+  return txt.charCodeAt(0) === 0xFEFF ? 
+    txt.slice(1).trim() : txt.trim()
 }
 
 export async function POST({ cookies, request, setHeaders }){
@@ -38,9 +30,9 @@ export async function POST({ cookies, request, setHeaders }){
   }
 
   const data = await request.formData();
-  const name = clean(data.get('name') as string);
-  const email = cleanEmail(data.get('email') as string);
-  const message = clean(data.get('message') as string);
+  const name = stripBom(data.get('name') as string);
+  const email = stripBom(data.get('email') as string);
+  const message = stripBom(data.get('message') as string);
   const check = contactSchema.safeParse({
     name,
     email,
