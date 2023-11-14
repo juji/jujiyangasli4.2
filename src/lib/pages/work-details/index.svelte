@@ -31,7 +31,7 @@
     id,
     title,
     images,
-    color
+    gradientColor
   } = work || {}
 
   const href = `/#works/${id}`;
@@ -62,7 +62,7 @@
     const rs = getComputedStyle(root)
     const init = rs.getPropertyValue('--transparent-bg')
     root.style.setProperty('--transparent-bg', 
-      `radial-gradient(farthest-corner at -54px 0px, ${color} 0%, ${init} 35%)`,
+      `radial-gradient(farthest-corner at -54px 0px, ${gradientColor} 0%, ${init} 35%)`,
     );
 
     return () => {

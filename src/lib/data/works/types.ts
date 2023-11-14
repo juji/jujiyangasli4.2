@@ -27,7 +27,7 @@ export type Work = {
   url: string
   logo: WorkLogo
   zombie?: boolean
-  color: string
+  gradientColor: string
   images: WorkImage[]
 }
 
