@@ -1,9 +1,16 @@
-<script>
+<script lang="ts">
   import Menu from './menu.svelte'
   import '@fontsource-variable/source-code-pro';
+
+  let scrollY:number;
+
 </script>
 
-<div class={'hello'} id="home">
+<svelte:window bind:scrollY={scrollY} />
+
+<div class={'hello'} 
+  style={`--scroll-y:${scrollY}`}
+  id="home">
   <!-- <img 
     src="https://1.gravatar.com/avatar/afb41904b6697862a2efc69237ebba4823dd73b5e07108b774656ddc667fb4ea?size=512"
     alt="juji"

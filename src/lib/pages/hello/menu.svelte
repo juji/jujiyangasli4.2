@@ -13,9 +13,11 @@
 <style lang="scss">
   @use '$lib/sass/slideLeft';
   @use '$lib/sass/fadeIn';
+
   .menu{
 
     margin-top: 3rem;
+    translate: 0 calc( 0.3px * var(--scroll-y));
 
     a{
       animation-name: slideLeft, fadeIn;
