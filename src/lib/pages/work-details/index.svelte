@@ -11,6 +11,7 @@
 
   // @ts-ignore
   import Icon from "svelte-icons-pack/Icon.svelte"
+	import { onMount } from "svelte";
 
   // prevent smooth scroll while navigating to /
   onNavigate((navigation) => {
@@ -29,7 +30,8 @@
   const { 
     id,
     title,
-    images
+    images,
+    color
   } = work || {}
 
   const href = `/#works/${id}`;
@@ -53,6 +55,20 @@
   const back = () => {
     history.back()
   }
+
+  onMount(() => {
+    //
+    const root = document.querySelector(':root') as HTMLElement;
+    const rs = getComputedStyle(root)
+    const init = rs.getPropertyValue('--transparent-bg')
+    root.style.setProperty('--transparent-bg', 
+      `radial-gradient(farthest-corner at -54px 0px, ${color} 0%, ${init} 35%)`,
+    );
+
+    return () => {
+      root.style.setProperty('--transparent-bg', init);
+    }
+  })
 
 </script>
 

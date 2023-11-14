@@ -27,6 +27,7 @@ export type Work = {
   url: string
   logo: WorkLogo
   zombie?: boolean
+  color: string
   images: WorkImage[]
 }
 
@@ -34,12 +35,7 @@ export type WorkContent = Work & {
   content: string
 }
 
-export type WorkSingle = {
-  id: string
-  title: string
-  year: string
-  url: string
-  logo: WorkLogo
-  zombie?: boolean
+export type WorkSingle = Work & {
+  images?: WorkImage[]
   image: WorkImage
 }

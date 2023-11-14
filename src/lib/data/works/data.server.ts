@@ -7,6 +7,7 @@ export const works: Work[] = [
     title:'WheelEasy',
     year: '2019 - 2023',
     url: 'https://wheeleasy.org',
+    color: 'rgb(41 131 153 / 50%)',
     logo: {
       url: '/images/works-logo/wheeleasy.png',
       width: 301,
@@ -95,6 +96,7 @@ export const works: Work[] = [
     year: '2015 - 2016',
     title:'Bridestory - Career',
     url: 'https://careers.bridestory.com',
+    color: 'rgb(255 118 107 / 52%)',
     logo: {
       url: '/images/works-logo/bridestory.webp',
       width: 112,
@@ -153,6 +155,7 @@ export const works: Work[] = [
     year: '2012 est.',
     title:'Solo Paragon Hotel',
     url: 'https://soloparagonhotel.com',
+    color: 'rgba(207,27,14,0.5)',
     logo: {
       url: '/images/works-logo/paragon.png',
       width: 580,
@@ -242,6 +245,7 @@ export const works: Work[] = [
     title:'Amber Video',
     year: '2018',
     url: 'https://www.linkedin.com/company/ambervideo',
+    color: 'rgba(227,108,57,0.5)',
     logo: {
       url: '/images/works-logo/amber.jpeg',
       width: 200,
