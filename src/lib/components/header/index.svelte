@@ -23,6 +23,15 @@
 </header>
 
 <style lang="scss">
+
+  @keyframes fadeIn {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
   
   .header{
     --scrollY: 0;
@@ -69,6 +78,10 @@
       text-decoration: none;
       font-size: calc(1rem * (4 - ((4 - 2) * clamp(0, var(--scrollY) / (163 - 42), 1))));
       /* transition: font-size var(--transition); */
+      animation-name: fadeIn;
+      animation-duration: 300ms;
+      animation-delay: 100ms;
+      animation-fill-mode: both;
     }
   
     &.small {
