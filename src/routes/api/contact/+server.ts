@@ -8,6 +8,7 @@ import { contactSchema } from '$lib/pages/contact/contact-form/contact.schema'
 
 export async function POST({ cookies, request, setHeaders }){
   
+  // return json({ success: true })
 
   const accept = request.headers.get('Accept')
 

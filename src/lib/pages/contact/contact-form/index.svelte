@@ -3,6 +3,7 @@
   import { page } from '$app/stores';
   import Message from '$lib/components/message.svelte';
 	import type { FormEventHandler } from 'svelte/elements';
+  import { onMount } from 'svelte';
   
   let success = $page.url.searchParams.get('contactok');
   let error = $page.url.searchParams.get('contacterror');
@@ -18,6 +19,9 @@
   let formValid = false
   let form:HTMLFormElement;
   let sending = false
+  let jsEnabled = false
+
+  onMount(() => { jsEnabled = true })
 
   let touched: {[key:string]: boolean} = {}
   let invalid: {[key:string]: boolean|string} = {}
@@ -84,6 +88,7 @@
 </script>
 
 <div class="contact-form" id="contact-form" 
+  class:sending
 >
   <h4>Send me a Hello!</h4>
   
@@ -92,6 +97,9 @@
       bind:this={form}
       on:submit|preventDefault={onSubmit}
       action={action}
+      class:js={jsEnabled}
+      class:nojs={!jsEnabled}
+      class:valid={formValid}
     >
       
       <label for="contact-name">Name</label>
