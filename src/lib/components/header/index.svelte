@@ -3,21 +3,19 @@
   import Menu from './menu/index.svelte';
   import '@fontsource/source-serif-pro';
   import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
-  let scrollY = 0
-  let smallHeader = false
-  let header: any;
-
-  // header height depends on:
-  // scroll
+  let scrollY = typeof window === 'undefined' ? 0 : window.scrollY
+  let smallHeader = true
   $: smallHeader = $page.url.pathname !== '/'
-  $: header && header.style.setProperty('--scrollY', scrollY); 
-
+  
 </script>
 
 <svelte:window bind:scrollY={scrollY} />
 
-<header bind:this={header} class={`header ${smallHeader?'small':''}`}> 
+<header
+  style={`--scrollY: ${scrollY}`}
+  class={`header ${smallHeader?'small':''}`}> 
   <Container>
     <a class={`logo`} href="/#home">juji&nbsp;};</a>
     <Menu />
@@ -27,7 +25,7 @@
 <style lang="scss">
   
   .header{
-    --scrollY: 163;
+    --scrollY: 0;
     --transition: 300ms;
 
     position: fixed;
@@ -37,7 +35,7 @@
     padding: var(--pad-y) var(--pad-x);
     padding-top: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
     padding-bottom: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
-    transition: padding-top var(--transition), padding-bottom var(--transition);
+    /* transition: padding-top var(--transition), padding-bottom var(--transition); */
    
     z-index: 10;
     
@@ -54,7 +52,7 @@
       background-color: var(--header-bg-small);
       backdrop-filter: blur(3px);
       opacity: calc(clamp(0, var(--scrollY) / (163 - 42), 1));
-      transition: opacity var(--transition);
+      /* transition: opacity var(--transition); */
     }
   
     
@@ -70,7 +68,7 @@
       color: var(--text);
       text-decoration: none;
       font-size: calc(1rem * (4 - ((4 - 2) * clamp(0, var(--scrollY) / (163 - 42), 1))));
-      transition: font-size var(--transition);
+      /* transition: font-size var(--transition); */
     }
   
     &.small {
