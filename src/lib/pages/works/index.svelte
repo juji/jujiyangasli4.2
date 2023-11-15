@@ -7,9 +7,6 @@
 	import { onMount } from "svelte";
 
   export let works: WorkSingle[];
-  let innerHeight = typeof window !== 'undefined' ? window.innerHeight : null;
-  let scrollY = 0
-  let scroll = 0
   let visible = false
   
   // prevent smooth scroll while navigating to work
@@ -25,32 +22,40 @@
     }
   })
 
-  $: if(scrollY > 42 && $animEnabled.anim && !visible){
-    visible = true
-  }
-
-  $: if(scrollY < 42 && $animEnabled.anim && visible){
-    visible = false
-  }
-
-  $: if(innerHeight && scrollY <= innerHeight){
-    scroll = scrollY
-  } else if(innerHeight){
-    scroll = innerHeight
-  }
-
   let lastWork:string|null = null
+  let observed: HTMLDivElement
   onMount(() => {
+    
     lastWork = sessionStorage.getItem('last-work') || null
     sessionStorage.removeItem('last-work')
+
+    if(typeof IntersectionObserver === 'undefined') {
+      return () => {}
+    }
+
+    let observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.target === observed) {
+          visible = entry.isIntersecting
+        }
+      })
+    },{
+      rootMargin: '1000% 0px -25% 0px'
+    });
+
+    observer.observe(observed);
+
+    return () => {
+      observer.disconnect()
+    }
+
   })
+
 
 </script>
 
-<svelte:window bind:innerHeight bind:scrollY />
-
-<div id="works"></div>
 <div 
+  id="works" bind:this={observed}
   class={`works`}
   class:anim={$animEnabled.anim}
   class:visible
@@ -80,33 +85,6 @@
 
   .works{
 
-    --window-height: 0;
-    --scroll-top: 0;
-    --translate-top: min(
-      calc( 
-        
-        /* paralax thing */
-        (
-          1 - (
-            min(
-              var(--scroll-top) / var(--window-height),
-              1
-            )
-          )
-        ) *
-
-
-        /* initial position */
-        ( -1px * (
-          var(--window-height) - (
-            /* multiple element height of homepage */
-            /* + 65 (pad-top-page) */
-            (56 + 123 + 21.5 + 24 + 67.5 + 225 ) 
-          )
-        )) + var(--pad-top-page)
-      ), 0px
-    );
-
     padding-top: var(--pad-top-page);
 
     h1{
@@ -129,9 +107,6 @@
     }
 
     &.anim{
-      /* translate: 0 var(--translate-top);
-      transition: translate 10ms; */
-      
 
       h1{
         animation-name: slideLeftBackward, fadeOut;
