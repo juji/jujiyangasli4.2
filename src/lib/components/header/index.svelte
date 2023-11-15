@@ -24,7 +24,7 @@
 style={`--scrollY: ${scroll}`}
 class={`header ${smallHeader?'small':''}`}> 
   <Container>
-    <a class={`logo noline`} href="/#home">juji&nbsp;};</a>
+    <a class={`logo noline`} href="/">juji&nbsp;};</a>
     <Menu />
   </Container>
 </header>
