@@ -116,6 +116,17 @@
 
   @keyframes slideLeftfadeIn {
     0%{
+      opacity: 0;
+      transform: translate3d(16px,0, 0);
+    }
+    100%{
+      opacity: 1;
+      transform: translate3d(0px,0, 0);
+    }
+  }
+
+  @keyframes scaleDim {
+    0%{
       transform: scale(0,0);
     }
     100%{
@@ -126,9 +137,13 @@
   &.anim{
 
     // animation-name: slideLeft, fadeIn;
-    animation-name: slideLeftfadeIn;
+    animation-name: scaleDim;
     animation-timeline: view();
     animation-fill-mode: both;
+
+    @media screen and (min-width: 768px) {
+      animation-name: slideLeftFadeIn;
+    }
 
   }
 
