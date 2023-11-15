@@ -57,6 +57,7 @@
   <meta name="twitter:title" content="Juji: Web Developer" />
   <meta name="twitter:description" content="Hello, my name is Tri Rahmat Gunadi, and i like to code stuff." />
   <meta name="twitter:image" content={`${$page.url.origin}/images/juji-800-418.jpeg`} />
+
 </svelte:head>
 
 <Pwa />
