@@ -4,25 +4,25 @@
   import '@fontsource/source-serif-pro';
   import { page } from '$app/stores';
 
-  // let scrollY = typeof window === 'undefined' ? 0 : window.scrollY
+  let scrollY = typeof window === 'undefined' ? 0 : window.scrollY
   let smallHeader = true
   $: smallHeader = $page.url.pathname !== '/'
 
   // magic number, that's okay bro... just let it be
-  // let scroll = 0
-  // $: if(scrollY <= 163){
-  //   scroll = scrollY
-  // } else {
-  //   scroll = 163
-  // }
+  let scroll = 0
+  $: if(scrollY <= 163){
+    scroll = scrollY
+  } else {
+    scroll = 163
+  }
   
 </script>
 
-<!-- <svelte:window bind:scrollY={scrollY} /> -->
+<svelte:window bind:scrollY={scrollY} />
 
-<!-- style={`--scrollY: ${scroll}`} -->
 <header
-  class={`header ${smallHeader?'small':''}`}> 
+style={`--scrollY: ${scroll}`}
+class={`header ${smallHeader?'small':''}`}> 
   <Container>
     <a class={`logo noline`} href="/#home">juji&nbsp;};</a>
     <Menu />
