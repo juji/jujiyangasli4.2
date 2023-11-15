@@ -18,21 +18,6 @@
 
     margin-top: 3rem;
     translate: 0 calc( 0.3px * var(--scroll-y));
-    @media screen and (max-height: 723px) {
-      translate: 0 calc( 0.26px * var(--scroll-y));
-    }
-
-    @media screen and (max-height: 684px) {
-      translate: 0 calc( 0.22px * var(--scroll-y));
-    }
-
-    @media screen and (max-height: 651px) {
-      translate: 0 calc( 0.18px * var(--scroll-y));
-    }
-
-    @media screen and (max-height: 619px) {
-      translate: 0 calc( 0.14px * var(--scroll-y));
-    }
 
     a{
       animation-name: slideLeft, fadeIn;
