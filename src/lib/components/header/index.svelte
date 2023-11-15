@@ -40,7 +40,7 @@
     width: 100%;
     top:0;
     left:0;
-    padding: var(--pad-y) var(--pad-x);
+    padding: 0 var(--pad-x);
     padding-top: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
     padding-bottom: calc(1rem * (4 - ((4 - 0.5) * clamp(0, var(--scrollY) / (163 - 42), 1))));
     transition: padding-top var(--transition), padding-bottom var(--transition);
@@ -48,6 +48,14 @@
     /* @media not all and (min-resolution: 0.001dpcm) {
       transition: ;
     } */
+
+    :global(.container){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      grid-column: content;
+      width: 100%;
+    }
    
     z-index: 10;
     
@@ -65,13 +73,6 @@
       backdrop-filter: blur(3px);
       opacity: calc(clamp(0, var(--scrollY) / (163 - 42), 1));
       transition: opacity var(--transition);
-    }
-  
-    
-    :global(.container){
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
   
     .logo{

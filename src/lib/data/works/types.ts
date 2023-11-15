@@ -20,7 +20,7 @@ export type WorkLogo = {
   height: number
 }
 
-export type Work = {
+type WorkBase = {
   id: string
   title: string
   year: string
@@ -28,6 +28,9 @@ export type Work = {
   logo: WorkLogo
   zombie?: boolean
   gradientColor: string
+}
+
+export type Work = WorkBase & {
   images: WorkImage[]
 }
 
@@ -35,7 +38,6 @@ export type WorkContent = Work & {
   content: string
 }
 
-export type WorkSingle = Work & {
-  images?: WorkImage[]
+export type WorkSingle = WorkBase & {
   image: WorkImage
 }
