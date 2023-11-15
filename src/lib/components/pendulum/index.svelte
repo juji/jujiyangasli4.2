@@ -14,7 +14,7 @@
   let canvas: HTMLCanvasElement|null = null
   let pendulum:any|null = null
   let pendulumElm:HTMLDivElement
-  let pendulumInside:HTMLDivElement
+  // let pendulumInside:HTMLDivElement
   let additionalHeight:number = 140
   let isTouch = false
 
@@ -67,30 +67,30 @@
     pendulum.stop && pendulum.stop()
   }
 
-  $: if(additionalHeight){
-    // @ts-ignore
-    if(typeof ScrollTimeline === 'undefined'){
+  // $: if(additionalHeight){
+  //   // @ts-ignore
+  //   if(typeof ScrollTimeline === 'undefined'){
 
-      pendulumInside.style.setProperty(
-        'translate', '0 var(--pendulum-top)'
-      )
+  //     pendulumInside.style.setProperty(
+  //       'translate', '0 var(--pendulum-top)'
+  //     )
 
-      document.addEventListener('scroll', () => {
+  //     document.addEventListener('scroll', () => {
   
-        const pendulumTop = additionalHeight * (
-          window.scrollY / (
-            document.documentElement.scrollHeight - 
-            document.documentElement.offsetHeight
-          )
-        ) * -1;
+  //       const pendulumTop = additionalHeight * (
+  //         window.scrollY / (
+  //           document.documentElement.scrollHeight - 
+  //           document.documentElement.offsetHeight
+  //         )
+  //       ) * -1;
   
-        pendulumElm.style.setProperty(
-          '--pendulum-top', 
-          pendulumTop + 'px'
-        )
-      })
-    }
-  }
+  //       pendulumElm.style.setProperty(
+  //         '--pendulum-top', 
+  //         pendulumTop + 'px'
+  //       )
+  //     })
+  //   }
+  // }
 
   // onMount(() => {
     
@@ -120,7 +120,7 @@
   </noscript>
 
   
-  <div class={'inside'} bind:this={pendulumInside}>
+  <div class={'inside'}>
     {#if img}
       <img 
       src={img.src} 
