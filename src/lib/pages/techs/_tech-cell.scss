@@ -116,7 +116,8 @@
 
   &.anim{
 
-    animation-name: slideLeft, fadeIn;
+    // animation-name: slideLeft, fadeIn;
+    animation-name: slideLeft;
     animation-timeline: view();
     animation-fill-mode: both;
 
