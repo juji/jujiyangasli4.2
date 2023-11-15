@@ -114,10 +114,24 @@
     }
   }
 
+  @keyframes slideLeftfadeIn {
+    0%{
+      opacity: 0;
+      transform: translate(1rem, 0rem);
+    }
+    50%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+      transform: translate(0rem, 0rem);
+    }
+  }
+
   &.anim{
 
     // animation-name: slideLeft, fadeIn;
-    animation-name: slideLeft;
+    animation-name: slideLeftfadeIn;
     animation-timeline: view();
     animation-fill-mode: both;
 
