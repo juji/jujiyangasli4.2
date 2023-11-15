@@ -15,7 +15,7 @@
   let pendulum:any|null = null
   let pendulumElm:HTMLDivElement
   let pendulumInside:HTMLDivElement
-  let additionalHeight:number
+  let additionalHeight:number = 140
   let isTouch = false
 
   onMount(() => {
@@ -46,10 +46,12 @@
   }
 
   $: if(canvas){
-    additionalHeight = Number(
-      getComputedStyle(pendulumElm)
-      .getPropertyValue('--additional-height').replace(/px/,'')
-    )
+
+    // additionalHeight = 140
+    // additionalHeight = Number(
+    //   getComputedStyle(pendulumElm)
+    //   .getPropertyValue('--additional-height').replace(/px/,'')
+    // )
 
     pendulum = PendulumFn({
       additionalHeight,
