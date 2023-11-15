@@ -19,7 +19,7 @@
   let isTouch = false
 
   onMount(() => {
-    isTouch = !! (
+    isTouch = (
       window.matchMedia(`(hover: none)`) &&
       window.matchMedia(`(hover: none)`).matches === true
     )
