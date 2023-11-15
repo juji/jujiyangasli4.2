@@ -9,7 +9,7 @@
   import Header from '$lib/components/header/index.svelte'
   import Footer from '$lib/components/footer/index.svelte'
   // import Pendulum from '$lib/components/pendulum/index.svelte';
-  
+  //
   // view transition
   onNavigate((navigation) => {
     // '@types/dom-view-transitions';
