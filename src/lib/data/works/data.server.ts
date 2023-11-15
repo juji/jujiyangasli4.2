@@ -245,7 +245,7 @@ export const works: Work[] = [
     title:'Amber Video',
     year: '2018',
     url: 'https://www.linkedin.com/company/ambervideo',
-    gradientColor: 'rgba(227,108,57,0.5)',
+    gradientColor: 'rgb(255 147 0 / 50%)',
     logo: {
       url: '/images/works-logo/amber.jpeg',
       width: 200,
