@@ -59,8 +59,7 @@
   id="works" bind:this={observed}
   class={`works`}
   class:anim={$animEnabled.anim}
-  class:visible
-  style={`--window-height: ${innerHeight}; --scroll-top: ${scroll}`}>
+  class:visible>
 
   <h1 class={`h1`}>
     Works
