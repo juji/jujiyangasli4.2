@@ -116,6 +116,8 @@
 
     &.anim{
       translate: 0 var(--translate-top);
+      /* transition: top 100ms; */
+      
 
       h1{
         animation-name: slideLeftBackward, fadeOut;

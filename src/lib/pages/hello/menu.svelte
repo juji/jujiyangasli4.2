@@ -17,7 +17,10 @@
   .menu{
 
     margin-top: 3rem;
-    translate: 0 calc( 0.3px * var(--scroll-y));
+    translate: 0 calc( 0.05px * var(--scroll-y));
+    @media screen and (min-height: 768px) {
+      translate: 0 calc( 0.3px * var(--scroll-y));
+    }
 
     a{
       animation-name: slideLeft, fadeIn;

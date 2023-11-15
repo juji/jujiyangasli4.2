@@ -95,6 +95,9 @@
     animation-duration: 1000ms;
     animation-delay: calc(var(--base-anim-delay) + 1200ms);
     animation-fill-mode: both;
-    translate: 0 calc( 0.22px * var(--scroll-y));
+    translate: 0 calc( 0.12px * var(--scroll-y));
+    @media screen and (min-height: 768px) {
+      translate: 0 calc( 0.25px * var(--scroll-y));
+    }
   }
 }
