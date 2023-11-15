@@ -2,6 +2,7 @@
   import { animEnabled } from '$lib/stores/anim-enabled';
   import PendulumFn, { type PendulumImage } from './double-pendulum'
   import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 
   let scrollY = 0
@@ -9,18 +10,32 @@
   let started:string|null = null
   let bgOn = true
   let windowWidth = 0
+  let windowHeight = 0
   let canvas: HTMLCanvasElement|null = null
   let pendulum:any|null = null
   let pendulumElm:HTMLDivElement
   let pendulumInside:HTMLDivElement
   let additionalHeight:number
+  let isTouch = false
+
+  onMount(() => {
+    isTouch = !! (
+      window.matchMedia(`(hover: none)`) &&
+      window.matchMedia(`(hover: none)`).matches === true
+    )
+  })
 
   
   $: bgOn = $page.url.pathname !== '/' || scrollY > 42
   // console.log($page.url.pathname, bgOn)
 
   let timeout:ReturnType<typeof setTimeout>|null = null
-  $: if(windowWidth > 0){
+
+  $: if(
+    windowWidth > 0 || (
+      !isTouch && windowHeight > 0
+    )
+  ){
     img = null
     started = null
     canvas = null
@@ -82,7 +97,11 @@
 
 </script>
 
-<svelte:window bind:scrollY={scrollY} bind:innerWidth={windowWidth} />
+<svelte:window 
+  bind:scrollY={scrollY} 
+  bind:innerWidth={windowWidth} 
+  bind:innerHeight={windowHeight} 
+/>
 <div bind:this={pendulumElm}
   class={`${'pendulum'} ${!$animEnabled?'nojs':''}`} 
   id="pendulum">

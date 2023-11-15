@@ -8,6 +8,7 @@
   export let works: WorkSingle[];
   let innerHeight = typeof window !== 'undefined' ? window.innerHeight : null;
   let scrollY = 0
+  let scroll = 0
   let visible = false
   
   // prevent smooth scroll while navigating to work
@@ -31,6 +32,10 @@
     visible = false
   }
 
+  $: if(innerHeight && scrollY <= innerHeight){
+    scroll = scrollY
+  }
+
 </script>
 
 <svelte:window bind:innerHeight bind:scrollY />
@@ -40,7 +45,7 @@
   class={`works`}
   class:anim={$animEnabled.anim}
   class:visible
-  style={`--window-height: ${innerHeight}; --scroll-top: ${scrollY}`}>
+  style={`--window-height: ${innerHeight}; --scroll-top: ${scroll}`}>
 
   <h1 class={`h1`}>
     Works

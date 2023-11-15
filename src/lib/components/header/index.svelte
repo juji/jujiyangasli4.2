@@ -7,13 +7,21 @@
   let scrollY = typeof window === 'undefined' ? 0 : window.scrollY
   let smallHeader = true
   $: smallHeader = $page.url.pathname !== '/'
+
+  // magic number, that's okay bro... just let it be
+  let scroll = 0
+  $: if(scrollY <= 163){
+    scroll = scrollY
+  } else {
+    scroll = 163
+  }
   
 </script>
 
 <svelte:window bind:scrollY={scrollY} />
 
 <header
-  style={`--scrollY: ${scrollY}`}
+  style={`--scrollY: ${scroll}`}
   class={`header ${smallHeader?'small':''}`}> 
   <Container>
     <a class={`logo noline`} href="/#home">juji&nbsp;};</a>
