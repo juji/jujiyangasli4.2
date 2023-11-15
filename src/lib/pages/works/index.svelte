@@ -22,6 +22,7 @@
     }
   })
 
+  // rebuild
   let lastWork:string|null = null
   let observed: HTMLDivElement
   onMount(() => {
