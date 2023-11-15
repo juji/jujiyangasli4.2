@@ -19,11 +19,11 @@
     <Icon src={RiBuildingsHomeFill} size="1.618rem" />
   </a>
   {#each MenuList as menu}
-  {#if menuIcon[menu.id]}
-    <a href={menu.href}>
-      <Icon src={menuIcon[menu.id]} size="1.618rem" />
-    </a>
-  {/if}
+    {#if menuIcon[menu.id]}
+      <a href={menu.href}>
+        <Icon src={menuIcon[menu.id]} size="1.618rem" />
+      </a>
+    {/if}
   {/each}
 </div>
 
