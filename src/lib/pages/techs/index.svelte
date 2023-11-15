@@ -3,42 +3,12 @@
   import TechCell from "./tech-cell.svelte";
   import { animEnabled } from '$lib/stores/anim-enabled';
   import { techs } from "$lib/data/techs";
-	import { onMount } from "svelte";
-
-  let observed: HTMLDivElement;
-  let visible = false
-
-  onMount(() => {
-    
-    if(typeof IntersectionObserver === 'undefined') {
-      return () => {}
-    }
-
-    let observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.target === observed) {
-          visible = entry.isIntersecting
-        }
-      })
-    },{
-      rootMargin: '1000% 0px -25% 0px'
-    });
-
-    observer.observe(observed);
-
-    return () => {
-      observer.disconnect()
-    }
-
-  })
 
 </script>
 
 <div 
-  bind:this={observed}
   class={`tech`} 
   class:anim={$animEnabled.anim}
-  class:visible
   id="techs">
 
   <h1 class={`h1`} >
@@ -53,8 +23,7 @@
         <TechCell
           item={tech}
           animEnabled={$animEnabled.anim}
-          parentVisible={visible}
-          animationDelay={300 + (i * 100)}
+          animRange={`${5+(i*4)}% ${30+(i*4)}%`}
         />
       {/each}
     </div> 
@@ -91,27 +60,16 @@
 
   &.anim{
     h1{
-      animation-name: slideUpBackward, fadeOut;
-      animation-duration: 400ms;
+      animation-name: slideUp, fadeIn;
+      animation-timeline: view();
+      animation-range: 18% 33%;
       animation-fill-mode: both;
-      animation-delay: 0ms;
     }
     .par{
-      animation-name: slideUpBackward, fadeOut;
-      animation-duration: 400ms;
-      animation-delay: 0ms;
+      animation-name: slideUp, fadeIn;
+      animation-timeline: view();
+      animation-range: 20% 35%;
       animation-fill-mode: both;
-    }
-
-    &.visible{
-      h1{
-        animation-name: slideUp, fadeIn;
-        animation-delay: 0ms;
-      }
-      .par{
-        animation-name: slideUp, fadeIn;
-        animation-delay: 100ms;
-      }
     }
   }
 }

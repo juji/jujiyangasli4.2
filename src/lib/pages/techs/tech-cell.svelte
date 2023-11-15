@@ -4,9 +4,8 @@
   import type { TechItem } from '$lib/data/techs'
 
   export let item:TechItem
-  export let animationDelay = 0
-  export let parentVisible = false
   export let animEnabled = false
+  export let animRange = '5% 30%;'
   const { id, title, image, url, width, height } = item||{}
 
 </script>
@@ -14,8 +13,8 @@
 
 <a href={url}
   data-id={id}
-  class={`cell ${animEnabled?'anim':''} ${parentVisible?'visible':''} noline`}
-  style={`animation-delay: ${animationDelay}ms`}
+  class={`cell ${animEnabled?'anim':''} noline`}
+  style={`animation-range: ${animRange}`}
   title={title}
   aria-label={title} 
   target="_blank" rel="noopener noreferrer">
