@@ -4,6 +4,7 @@
   import { animEnabled } from '$lib/stores/anim-enabled';
   import { onNavigate } from '$app/navigation';
   import type { WorkSingle } from "$lib/data/works/types";
+	import { onMount } from "svelte";
 
   export let works: WorkSingle[];
   let innerHeight = typeof window !== 'undefined' ? window.innerHeight : null;
@@ -34,7 +35,15 @@
 
   $: if(innerHeight && scrollY <= innerHeight){
     scroll = scrollY
+  } else if(innerHeight){
+    scroll = innerHeight
   }
+
+  let lastWork:string|null = null
+  onMount(() => {
+    lastWork = sessionStorage.getItem('last-work') || null
+    sessionStorage.removeItem('last-work')
+  })
 
 </script>
 
@@ -56,7 +65,7 @@
   <div class={`workThumbnails`}>
     {#each works as work, i }
     <Thumbnail
-      paused={$animEnabled.anim}
+      paused={lastWork === work.id ? false : $animEnabled.anim}
       animationDelay={500 + (i * 100)}
       visible={visible}
       work={work} />

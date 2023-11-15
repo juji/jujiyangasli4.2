@@ -12,10 +12,7 @@
         // reduced motion
         window.matchMedia(`(prefers-reduced-motion: reduce)`) &&
         window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true
-      )) && (
-        // intersection observer
-        typeof IntersectionObserver !== 'undefined'
-      )
+      ))
 
       // true
     )
