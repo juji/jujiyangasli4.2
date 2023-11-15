@@ -4,6 +4,7 @@
   import { animEnabled } from '$lib/stores/anim-enabled';
   import { techs } from "$lib/data/techs";
 
+  // redeploy
 </script>
 
 <div 
