@@ -25,8 +25,7 @@
     glare: true,
     "max-glare": 0.6,
 
-    // preventting this on mobile
-    // gyroscope: true,
+    gyroscope: false, // just to be sure
     // gyroscopeMinAngleX: -36000,
     // gyroscopeMaxAngleX: 36000,
     // gyroscopeMinAngleY: -36000,
