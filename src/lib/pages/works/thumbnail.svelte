@@ -26,18 +26,25 @@
     "max-glare": 0.6,
 
     // preventting this on mobile
-    gyroscope: true,
-    gyroscopeMinAngleX: -36000,
-    gyroscopeMaxAngleX: 36000,
-    gyroscopeMinAngleY: -36000,
-    gyroscopeMaxAngleY: 36000
+    // gyroscope: true,
+    // gyroscopeMinAngleX: -36000,
+    // gyroscopeMaxAngleX: 36000,
+    // gyroscopeMinAngleY: -36000,
+    // gyroscopeMaxAngleY: 36000
   };
   
   const elementId = `works/${id}`
   const href = `/${elementId}`
   let anchor:HTMLAnchorElement;
+  let isTouch = false;
 
   onMount(() => {
+    isTouch = (
+      window.matchMedia(`(hover: none)`) &&
+      window.matchMedia(`(hover: none)`).matches === true
+    )
+
+    if(isTouch) return () => {}
 
     VanillaTilt.init(anchor, options);
     return () => {
