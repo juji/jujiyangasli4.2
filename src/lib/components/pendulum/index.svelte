@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { animEnabled } from '$lib/stores/anim-enabled';
   import Canvas from './canvas.svelte'
   import { page } from '$app/stores';
   import type { PendulumImage } from './double-pendulum'
@@ -26,7 +25,7 @@
       window.matchMedia(`(hover: none)`).matches === true
     )
 
-    started = new Date().toISOString()
+    // started = new Date().toISOString()
     // timeout = setTimeout(() => {
     // },500)
   })
@@ -34,18 +33,18 @@
   $: bgOn = $page.url.pathname !== '/' || scrollY > 42
 
 
-  // $: if(
-  //   windowWidth > 0 || (
-  //     !isTouch && windowHeight > 0
-  //   )
-  // ){
-  //   img = null
-  //   started = null
-  //   if(timeout) clearTimeout(timeout)
-  //   timeout = setTimeout(() => {
-  //     started = new Date().toISOString()
-  //   },500)
-  // }
+  $: if(
+    windowWidth > 0 || (
+      !isTouch && windowHeight > 0
+    )
+  ){
+    img = null
+    started = null
+    if(timeout) clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      started = new Date().toISOString()
+    },500)
+  }
 
   // $: if(additionalHeight){
   //   // @ts-ignore
@@ -86,7 +85,7 @@
 />
 
 <div
-  class={`${'pendulum'} ${!$animEnabled?'nojs':''}`} 
+  class={`${'pendulum'}`} 
   id="pendulum">
         
   <div class={`${'bg'} ${bgOn?'on':''}`}></div>

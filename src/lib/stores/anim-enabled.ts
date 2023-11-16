@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
 export const animEnabled = writable({
-  js: false,
+  js: true,
   anim: true
 });

@@ -1,9 +1,16 @@
 <script>
   import { animEnabled } from "$lib/stores/anim-enabled";
+	import { onMount } from "svelte";
   import MenuButton from "./button.svelte";
   import MenuContent from "./content.svelte";
 
+  let js = false
   let isOn = false
+
+  onMount(() => {
+    js = true
+  })
+
   const onClickMenu = () => {
     isOn = !isOn
     changeHtml()
@@ -23,13 +30,13 @@
 
 </script>
 
-<nav class={`menu ${!$animEnabled.js?'nojs':''}`}>
+<nav class={`menu ${!js?'nojs':''}`}>
   <MenuButton 
-    jsEnabled={$animEnabled.js}
+    jsEnabled={js}
     isOn={isOn} 
     on:click={onClickMenu} />
   <MenuContent 
-    jsEnabled={$animEnabled.js}
+    jsEnabled={js}
     isOn={isOn} 
     on:click={onClickItem} 
   />
