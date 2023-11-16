@@ -1,7 +1,6 @@
 <script lang="ts">
   import TitleLink from "$lib/components/title-link.svelte";
   import Thumbnail from "./thumbnail.svelte";
-  // import { animEnabled } from '$lib/stores/anim-enabled';
   import { onNavigate } from '$app/navigation';
   import type { WorkSingle } from "$lib/data/works/types";
 	import { onMount } from "svelte";

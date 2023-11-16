@@ -1,7 +1,6 @@
 <script lang="ts">
   import TitleLink from "$lib/components/title-link.svelte";
   import TechCell from "./tech-cell.svelte";
-  // import { animEnabled } from '$lib/stores/anim-enabled';
   import { techs } from "$lib/data/techs";
 
   // redeploy
