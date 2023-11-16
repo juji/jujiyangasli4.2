@@ -1,7 +1,7 @@
 
 <script lang="ts">
   import '@fontsource-variable/open-sans';
-  import AnimEnabled from '$lib/components/anim-enabled.svelte';
+  // import AnimEnabled from '$lib/components/anim-enabled.svelte';
   import Pwa from '$lib/components/pwa.svelte';
   import { onNavigate } from '$app/navigation';
   import { page } from '$app/stores';
@@ -61,7 +61,7 @@
 </svelte:head>
 
 <Pwa />
-<AnimEnabled />
+<!-- <AnimEnabled /> -->
 <!-- <Pendulum /> -->
 <Header />
 <slot/>
