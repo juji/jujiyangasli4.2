@@ -1,5 +1,4 @@
 <script>
-  import { animEnabled } from "$lib/stores/anim-enabled";
 	import { onMount } from "svelte";
   import MenuButton from "./button.svelte";
   import MenuContent from "./content.svelte";
