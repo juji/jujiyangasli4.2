@@ -6,7 +6,7 @@
   import { onNavigate } from '$app/navigation';
   import { page } from '$app/stores';
   
-  // import Header from '$lib/components/header/index.svelte'
+  import Header from '$lib/components/header/index.svelte'
   import Footer from '$lib/components/footer/index.svelte'
   // import Pendulum from '$lib/components/pendulum/index.svelte';
   //
@@ -63,6 +63,6 @@
 <Pwa />
 <AnimEnabled />
 <!-- <Pendulum /> -->
-<!-- <Header /> -->
+<Header />
 <slot/>
 <Footer />
