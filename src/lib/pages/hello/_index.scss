@@ -56,6 +56,7 @@
     animation-duration: 300ms;
     animation-fill-mode: both;
     animation-delay: var(--base-anim-delay);
+    // animation-timing-function: cubic-bezier(.41,1.59,.71,1.11);
     font-family: 'Source Code Pro Variable', sans-serif;
   }
 

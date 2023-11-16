@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { homePaddingBottom } from '$lib/stores/home-padding';
 	import { onMount } from 'svelte';
   import Menu from './menu.svelte'
   import '@fontsource-variable/source-code-pro';
@@ -17,9 +16,7 @@
       0,
       lastRect.height
     )
-
-    if(paddingBottom && paddingBottom !== $homePaddingBottom) 
-      homePaddingBottom.set(paddingBottom)
+    
   }
 
   $: scroll = Math.min(scrollY/innerHeight, 1) ?? 0

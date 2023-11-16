@@ -4,7 +4,6 @@
   import { onNavigate } from '$app/navigation';
   import type { WorkSingle } from "$lib/data/works/types";
 	import { onMount } from "svelte";
-  import { homePaddingBottom } from '$lib/stores/home-padding';
 
   export let works: WorkSingle[];
   let visible = false
@@ -52,20 +51,10 @@
 
   })
 
-  let innerHeight: number;
-  let scrollY: number;
-  let scroll: number;
-
-  $: scroll = Math.min(scrollY/innerHeight, 1)??0
-
-
 </script>
-
-<svelte:window bind:innerHeight bind:scrollY={scrollY} />
 
 <div id="works" bind:this={observed}></div>
 <div
-  style={`--home-padding-bottom: ${$homePaddingBottom??0}; --scroll-y:${scroll??0}`}
   class={`works`}
   class:anim={true}
   class:visible>
@@ -94,8 +83,8 @@
 
   .works{
 
-    --home-padding-bottom: 0;
-    --scroll-y: 0;
+    /* --home-padding-bottom: 0;
+    --scroll-y: 0; */
 
     /* translate: 0 calc( 1px * (1 - var(--scroll-y)) * var(--home-padding-bottom) ); */
     /* transition: translate 200ms; */

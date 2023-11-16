@@ -21,8 +21,10 @@
 
     a{
       animation-name: slideLeft, fadeIn;
-      animation-duration: 450ms;
+      animation-duration: 500ms;
       animation-fill-mode: both;
+      animation-timing-function: cubic-bezier(.41,1.59,.71,1.11);
+      /* animation-timing-function: cubic-bezier(.71,.46,.35,1.62); */
       margin-right: 1.5rem;
       display: inline-block;
 
