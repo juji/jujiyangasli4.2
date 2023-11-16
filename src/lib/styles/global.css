@@ -136,3 +136,8 @@ a.noline:after{
 a.noline:hover:after {
   transform: initial;
 }
+
+h2{
+  margin: 0.68rem 0;
+  font-size: 2rem;
+}

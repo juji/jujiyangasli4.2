@@ -7,7 +7,6 @@
   import IoLogoLinkedin from "svelte-icons-pack/io/IoLogoLinkedin";
   import IoLogoSkype from "svelte-icons-pack/io/IoLogoSkype";
   import ContactForm from './contact-form/index.svelte'
-  // import { animEnabled } from '$lib/stores/anim-enabled';
 	import { onMount } from "svelte";
 
   let visible = false
@@ -47,10 +46,10 @@
   bind:this={observed}
   id="contact">
   
-  <h1 class={`h1`}>
+  <h2 class={`h1`}>
     Contact
-    <TitleLink href="/#contact" />
-  </h1>
+    <TitleLink href="/#contact" label="Contact" />
+  </h2>
   <p class={`email`}>
     <a target="_blank" 
       rel="noopener noreferrer" 

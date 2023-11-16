@@ -95,7 +95,7 @@
   class:visible
   class:sending
 >
-  <h4>Send me a Hello!</h4>
+  <h3>Send me a Hello!</h3>
   
   <div class="form">
     <form method="POST"

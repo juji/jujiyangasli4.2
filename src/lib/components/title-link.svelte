@@ -3,9 +3,10 @@
   import Icon from 'svelte-icons-pack/Icon.svelte';
   import ImLink from "svelte-icons-pack/im/ImLink";
   export let href = '/#';
+  export let label = ''
 </script>
 
-<a href={href}><Icon src={ImLink} /></a>
+<a href={href} aria-label={label}><Icon src={ImLink} /></a>
 
 <style lang="scss">
   a{

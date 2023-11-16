@@ -10,7 +10,7 @@
   margin-bottom: 5rem;
   max-width: 500px;
 
-  h4{
+  h3{
     margin-bottom: 1rem;
     font-weight: 300;
     font-size: 2rem;
@@ -109,14 +109,14 @@
   &.anim{
 
     --delay-init: 800ms;
-    h4, label, input, textarea, button, .server-message{
+    h3, label, input, textarea, button, .server-message{
       animation-name: fadeOut, slideUpBackward;
       animation-duration: 300ms;
       animation-timing-function: ease-out;
       animation-fill-mode: both;
     }
 
-    h4{
+    h3{
       animation-delay: var(--delay-init);
     }
     [for="contact-name"]{
@@ -142,7 +142,7 @@
     }
 
     &.visible{
-      h4, label, input, textarea, button, .server-message{
+      h3, label, input, textarea, button, .server-message{
         animation-name: fadeIn, slideUp;
       }
     }

@@ -40,10 +40,10 @@
   class:visible
   id="techs">
 
-  <h1 class={`h1`} >
+  <h2 class={`h1`} >
     Technologies
-    <TitleLink href="/#techs" />
-  </h1>
+    <TitleLink href="/#techs" label="Techs" />
+  </h2>
   <p class={`par`}>Things I play with</p>
 
   {#each techs as group}

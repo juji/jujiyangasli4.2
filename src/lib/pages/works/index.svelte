@@ -60,10 +60,10 @@
   class:anim={true}
   class:visible>
 
-  <h1 class={`h1`}>
+  <h2 class={`h1`}>
     Works
-    <TitleLink href="/#works" />
-  </h1>
+    <TitleLink href="/#works" label="Works" />
+  </h2>
   <p class={`par`}>Things i did</p>
 
   <div class={`workThumbnails`}>
@@ -86,7 +86,7 @@
 
     padding-top: var(--pad-top-page);
 
-    h1{
+    h2{
       padding-top: 3rem;
     }
 
@@ -107,7 +107,7 @@
 
     &.anim{
 
-      h1{
+      h2{
         animation-name: slideLeftBackward, fadeOut;
         animation-fill-mode: both;
         animation-duration: 200ms;
@@ -121,7 +121,7 @@
       }
 
       &.visible{
-        h1{
+        h2{
           animation-name: slideLeft, fadeIn;
           animation-duration: 200ms;
           animation-delay: 0ms;
