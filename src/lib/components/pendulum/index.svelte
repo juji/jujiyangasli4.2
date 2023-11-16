@@ -14,6 +14,7 @@
   let scrollY = 0
   let windowWidth = 0
   let windowHeight = 0
+  let timeout:ReturnType<typeof setTimeout>|null = null
 
   function setImage(pendulumImg:PendulumImage){
     img = pendulumImg
@@ -24,24 +25,27 @@
       window.matchMedia(`(hover: none)`) &&
       window.matchMedia(`(hover: none)`).matches === true
     )
+
+    started = new Date().toISOString()
+    // timeout = setTimeout(() => {
+    // },500)
   })
 
   $: bgOn = $page.url.pathname !== '/' || scrollY > 42
 
-  let timeout:ReturnType<typeof setTimeout>|null = null
 
-  $: if(
-    windowWidth > 0 || (
-      !isTouch && windowHeight > 0
-    )
-  ){
-    img = null
-    started = null
-    if(timeout) clearTimeout(timeout)
-    timeout = setTimeout(() => {
-      started = new Date().toISOString()
-    },500)
-  }
+  // $: if(
+  //   windowWidth > 0 || (
+  //     !isTouch && windowHeight > 0
+  //   )
+  // ){
+  //   img = null
+  //   started = null
+  //   if(timeout) clearTimeout(timeout)
+  //   timeout = setTimeout(() => {
+  //     started = new Date().toISOString()
+  //   },500)
+  // }
 
   // $: if(additionalHeight){
   //   // @ts-ignore
