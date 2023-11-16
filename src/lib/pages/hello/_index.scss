@@ -29,6 +29,12 @@
   transition: opacity 300ms;
   transition-timing-function: ease-out;
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+
+  & .hello-gap{
+    flex: 1 1 auto;
+  }
 
   &.intersected{
     transition: opacity 100ms;
@@ -65,6 +71,7 @@
     animation-fill-mode: both;
     animation-delay: calc(var(--base-anim-delay) + 100ms);
     display: block;
+    translate: 0 calc( 0.2px * var(--scroll-y) * var(--padding-bottom));
   }
 
   .p2{
@@ -75,6 +82,7 @@
     animation-fill-mode: both;
     animation-delay: calc(var(--base-anim-delay) + 200ms);
     display: block;
+    translate: 0 calc( 0.3px * var(--scroll-y) * var(--padding-bottom));
   }
 
   .p3{
@@ -85,6 +93,7 @@
     animation-fill-mode: both;
     animation-delay: calc(var(--base-anim-delay) + 300ms);
     display: block;
+    translate: 0 calc( 0.5px * var(--scroll-y) * var(--padding-bottom));
   }
 
   .smiley{
@@ -93,26 +102,10 @@
     animation-duration: 1000ms;
     animation-delay: calc(var(--base-anim-delay) + 1200ms);
     animation-fill-mode: both;
+    translate: 0 calc( 0.8px * var(--scroll-y) * var(--padding-bottom));
     // @media screen and (max-height: 666px) {
     //   translate: 0 calc( 0.12px * var(--scroll-y));
     // }
   }
 
-  &.animated{
-    .p1{
-      translate: 0 calc( 0.2px * var(--scroll-y) * var(--padding-bottom));
-    }
-
-    .p2{
-      translate: 0 calc( 0.3px * var(--scroll-y) * var(--padding-bottom));
-    }
-
-    .p3{
-      translate: 0 calc( 0.5px * var(--scroll-y) * var(--padding-bottom));
-    }
-
-    .smiley{
-      translate: 0 calc( 0.8px * var(--scroll-y) * var(--padding-bottom));
-    }
-  }
 }
