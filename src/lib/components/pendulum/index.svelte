@@ -20,31 +20,41 @@
   }
 
   onMount(() => {
+
     isTouch = (
       window.matchMedia(`(hover: none)`) &&
       window.matchMedia(`(hover: none)`).matches === true
     )
 
-    // started = new Date().toISOString()
-    // timeout = setTimeout(() => {
-    // },500)
+    started = new Date().toISOString()
+
+    let winSize = {
+      windowWidth,
+      windowHeight, 
+    }
+
+    const onresize = () => {
+      
+      // on mobile this thing happens
+      if(isTouch && windowWidth === winSize.windowWidth) 
+        return console.log('is mobile');
+
+      img = null
+      started = null
+      if(timeout) clearTimeout(timeout)
+      timeout = setTimeout(() => {
+        started = new Date().toISOString()
+      },500)
+    }
+
+    window.addEventListener('resize', onresize)
+
+    return () => {
+      window.removeEventListener('resize',onresize)
+    }
   })
 
   $: bgOn = $page.url.pathname !== '/' || scrollY > 42
-
-
-  $: if(
-    windowWidth > 0 || (
-      !isTouch && windowHeight > 0
-    )
-  ){
-    img = null
-    started = null
-    if(timeout) clearTimeout(timeout)
-    timeout = setTimeout(() => {
-      started = new Date().toISOString()
-    },500)
-  }
 
   // $: if(additionalHeight){
   //   // @ts-ignore
