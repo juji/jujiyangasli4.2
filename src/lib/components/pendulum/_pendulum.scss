@@ -2,10 +2,6 @@
 
   --additional-height: 140px;
 
-  &.nojs{
-    --additional-height: 0px;
-  }
-
   --pendulum-top: 0px;
 
   @keyframes pendulumTop {

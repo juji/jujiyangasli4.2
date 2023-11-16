@@ -1,6 +1,6 @@
 <script lang="ts">
   import { animEnabled } from '$lib/stores/anim-enabled';
-  // import Canvas from './canvas.svelte'
+  import Canvas from './canvas.svelte'
   import { page } from '$app/stores';
   import type { PendulumImage } from './double-pendulum'
 	import { onMount } from 'svelte';
@@ -108,7 +108,7 @@
       width={img.width} 
       alt="pendulum" />
     {:else if started}
-      <!-- <Canvas started={started} setImage={setImage} /> -->
+      <Canvas started={started} setImage={setImage} />
     {/if}
   </div>
 
