@@ -1,22 +1,23 @@
 <script lang="ts">
   import { animEnabled } from '$lib/stores/anim-enabled';
-  import PendulumFn, { type PendulumImage } from './double-pendulum'
+  import Canvas from './canvas.svelte'
   import { page } from '$app/stores';
+  import type { PendulumImage } from './double-pendulum'
 	import { onMount } from 'svelte';
 
 
-  let scrollY = 0
   let img:PendulumImage|null = null
   let started:string|null = null
+  let isTouch = false
+
   let bgOn = true
+  let scrollY = 0
   let windowWidth = 0
   let windowHeight = 0
-  let canvas: HTMLCanvasElement|null = null
-  let pendulum:any|null = null
-  let pendulumElm:HTMLDivElement
-  // let pendulumInside:HTMLDivElement
-  let additionalHeight:number = 140
-  let isTouch = false
+
+  function setImage(pendulumImg:PendulumImage){
+    img = pendulumImg
+  }
 
   onMount(() => {
     isTouch = (
@@ -25,9 +26,7 @@
     )
   })
 
-  
   $: bgOn = $page.url.pathname !== '/' || scrollY > 42
-  // console.log($page.url.pathname, bgOn)
 
   let timeout:ReturnType<typeof setTimeout>|null = null
 
@@ -38,33 +37,10 @@
   ){
     img = null
     started = null
-    canvas = null
     if(timeout) clearTimeout(timeout)
     timeout = setTimeout(() => {
       started = new Date().toISOString()
     },500)
-  }
-
-  $: if(canvas){
-
-    // additionalHeight = 140
-    // additionalHeight = Number(
-    //   getComputedStyle(pendulumElm)
-    //   .getPropertyValue('--additional-height').replace(/px/,'')
-    // )
-
-    pendulum = PendulumFn({
-      additionalHeight,
-      canvas,
-      started: started as string,
-      callback: (image: PendulumImage, ts: string) => {
-        if(ts === started) img = image
-      }
-    })
-  }
-
-  $: if(!canvas && pendulum){
-    pendulum.stop && pendulum.stop()
   }
 
   // $: if(additionalHeight){
@@ -101,13 +77,13 @@
 
 <svelte:window 
   bind:scrollY={scrollY} 
-  bind:innerWidth={windowWidth} 
-  bind:innerHeight={windowHeight} 
+  bind:innerHeight={windowHeight}
+  bind:innerWidth={windowWidth}
 />
-<div bind:this={pendulumElm}
+
+<div
   class={`${'pendulum'} ${!$animEnabled?'nojs':''}`} 
   id="pendulum">
-
         
   <div class={`${'bg'} ${bgOn?'on':''}`}></div>
   <noscript>
@@ -128,7 +104,7 @@
       width={img.width} 
       alt="pendulum" />
     {:else if started}
-      <canvas bind:this={canvas} id="pendulumCanvas"></canvas>
+      <Canvas started={started} setImage={setImage} />
     {/if}
   </div>
 
