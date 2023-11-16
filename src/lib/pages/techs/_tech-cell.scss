@@ -1,3 +1,6 @@
+@use 'src/lib/sass/slideLeft';
+@use 'src/lib/sass/fadeIn';
+@use 'src/lib/sass/fadeOut';
 
 .cell{
 
@@ -13,7 +16,6 @@
   overflow: hidden;
   
   &>:global(img){
-    // image-rendering: crisp-edges;
     position: absolute;
     top:50%;
     left:50%;
@@ -25,7 +27,6 @@
     scale: 1;
     transform: translate3d(-50%,-50%,0);
     transition: scale 200ms;
-
   }
 
   &:hover{
@@ -111,36 +112,15 @@
     }
   }
 
-  @keyframes slideLeftFadeIn {
-    0%{
-      opacity: 0;
-      transform: translate3d(16px,0, 0);
-    }
-    100%{
-      opacity: 1;
-      transform: translate3d(0px,0, 0);
-    }
-  }
-
-  @keyframes scaleDim {
-    0%{
-      transform: scale(0,0);
-    }
-    100%{
-      transform: scale(1,1);
-    }
-  }
-
   &.anim{
 
-    animation-name: slideLeftFadeIn;
-    animation-timeline: view();
+    animation-name: slideLeftBackwards, fadeOut;
+    animation-duration: 200ms;
     animation-fill-mode: both;
 
-    @media only screen and (hover: none) {
-      animation-name: scaleDim;
+    &.visible{
+      animation-name: slideLeft, fadeIn;
     }
-
   }
 
   @media screen and (min-width: 364px) {

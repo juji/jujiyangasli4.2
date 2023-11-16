@@ -1,21 +1,40 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
   import Menu from './menu.svelte'
   import '@fontsource-variable/source-code-pro';
 
-  // let scrollY:number;
-  // let innerHeight = typeof window !== 'undefined' ? window.innerHeight : null;
-  // let scroll = 0;
+  let scrollY:number;
+  let innerHeight: number;
+  let scroll = 0;
+  let animated: boolean = false
+  let last: HTMLDivElement;
+  let paddingBottom:number;
 
-  // $: if(innerHeight && scrollY <= innerHeight){
-  //   scroll = scrollY
-  // }
+  $: if(innerHeight){
+
+    const lastRect = last.getBoundingClientRect()
+    paddingBottom = Math.max(
+      0,
+      (innerHeight as number) - lastRect.top
+    )
+
+    animated = paddingBottom > 0
+  }
+
+  $: if(innerHeight && scrollY <= innerHeight){
+    scroll = scrollY / innerHeight
+  } else {
+    scroll = 1
+  }
 
 </script>
 
-<!-- <svelte:window bind:innerHeight bind:scrollY={scrollY} /> -->
+<svelte:window bind:innerHeight bind:scrollY={scrollY} />
 
-<!-- style={`--scroll-y:${scroll}`} -->
-<div class={'hello'} 
+<div 
+  class={'hello'}
+  class:animated
+  style={`--scroll-y:${scroll}; --padding-bottom: ${paddingBottom}`}
   id="home">
   <!-- <img 
     src="https://1.gravatar.com/avatar/afb41904b6697862a2efc69237ebba4823dd73b5e07108b774656ddc667fb4ea?size=512"
@@ -39,6 +58,7 @@
   <br />
   <div id="smiley" class={'smiley'}>;)</div>
   <Menu />
+  <div bind:this={last}></div>
 </div>
 
 <style lang="scss">

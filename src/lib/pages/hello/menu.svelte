@@ -17,7 +17,7 @@
   .menu{
 
     margin-top: 3rem;
-    translate: 0 calc( 0.3px * var(--scroll-y));
+    translate: 0 calc( 1px * var(--scroll-y) * var(--padding-bottom));
 
     a{
       animation-name: slideLeft, fadeIn;
