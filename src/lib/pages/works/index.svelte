@@ -97,7 +97,8 @@
     --home-padding-bottom: 0;
     --scroll-y: 0;
 
-    translate: 0 calc( -1px * (1 - var(--scroll-y)) * var(--home-padding-bottom) );
+    /* translate: 0 calc( 1px * (1 - var(--scroll-y)) * var(--home-padding-bottom) ); */
+    /* transition: translate 200ms; */
 
     padding-top: var(--pad-top-page);
 
