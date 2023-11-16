@@ -1,7 +1,7 @@
 <script lang="ts">
   import TitleLink from "$lib/components/title-link.svelte";
   import TechCell from "./tech-cell.svelte";
-  import { animEnabled } from '$lib/stores/anim-enabled';
+  // import { animEnabled } from '$lib/stores/anim-enabled';
   import { techs } from "$lib/data/techs";
 	import { onMount } from "svelte";
 
@@ -37,7 +37,7 @@
 <div 
   bind:this={observed}
   class={`tech`} 
-  class:anim={$animEnabled.anim}
+  class:anim={true}
   class:visible
   id="techs">
 
@@ -52,7 +52,7 @@
       {#each group as tech, i}
         <TechCell
           item={tech}
-          animEnabled={$animEnabled.anim}
+          animEnabled={true}
           parentVisible={visible}
           animationDelay={300 + (i * 100)}
         />

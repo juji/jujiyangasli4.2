@@ -1,7 +1,7 @@
 <script lang="ts">
   import TitleLink from "$lib/components/title-link.svelte";
   import Thumbnail from "./thumbnail.svelte";
-  import { animEnabled } from '$lib/stores/anim-enabled';
+  // import { animEnabled } from '$lib/stores/anim-enabled';
   import { onNavigate } from '$app/navigation';
   import type { WorkSingle } from "$lib/data/works/types";
 	import { onMount } from "svelte";
@@ -58,7 +58,7 @@
 <div 
   id="works" bind:this={observed}
   class={`works`}
-  class:anim={$animEnabled.anim}
+  class:anim={true}
   class:visible>
 
   <h1 class={`h1`}>
@@ -70,7 +70,7 @@
   <div class={`workThumbnails`}>
     {#each works as work, i }
     <Thumbnail
-      paused={lastWork === work.id ? false : $animEnabled.anim}
+      paused={lastWork !== work.id}
       animationDelay={500 + (i * 100)}
       visible={visible}
       work={work} />

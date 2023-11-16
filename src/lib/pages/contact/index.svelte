@@ -7,7 +7,7 @@
   import IoLogoLinkedin from "svelte-icons-pack/io/IoLogoLinkedin";
   import IoLogoSkype from "svelte-icons-pack/io/IoLogoSkype";
   import ContactForm from './contact-form/index.svelte'
-  import { animEnabled } from '$lib/stores/anim-enabled';
+  // import { animEnabled } from '$lib/stores/anim-enabled';
 	import { onMount } from "svelte";
 
   let visible = false
@@ -42,7 +42,7 @@
 
 <div 
   class={`contact`}
-  class:anim={$animEnabled.anim}
+  class:anim={true}
   class:visible={visible}
   bind:this={observed}
   id="contact">
@@ -82,7 +82,7 @@
   </div>
 
   <ContactForm 
-    anim={$animEnabled.anim}
+    anim={true}
     visible={visible}
   />
 </div>

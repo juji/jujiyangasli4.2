@@ -1,7 +1,7 @@
 <script lang="ts">
   import TitleLink from "$lib/components/title-link.svelte";
   import TechCell from "./tech-cell.svelte";
-  import { animEnabled } from '$lib/stores/anim-enabled';
+  // import { animEnabled } from '$lib/stores/anim-enabled';
   import { techs } from "$lib/data/techs";
 
   // redeploy
@@ -9,7 +9,7 @@
 
 <div 
   class={`tech`} 
-  class:anim={$animEnabled.anim}
+  class:anim={true}
   id="techs">
 
   <h1 class={`h1`} >
@@ -23,7 +23,7 @@
       {#each group as tech, i}
         <TechCell
           item={tech}
-          animEnabled={$animEnabled.anim}
+          animEnabled={true}
           animRange={`${5+(i*4)}% ${30+(i*4)}%`}
         />
       {/each}
