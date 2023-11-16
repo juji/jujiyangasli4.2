@@ -23,7 +23,7 @@
         <TechCell
           item={tech}
           animEnabled={true}
-          animRange={`${5+(i*4)}% ${30+(i*4)}%`}
+          animRange={`${5+(i*4)}% ${20+(i*4)}%`}
         />
       {/each}
     </div> 
