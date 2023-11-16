@@ -41,7 +41,7 @@
   padding-top: var(--pad-top-page);
   /* padding-bottom: 5rem; */
   
-  h1{
+  h2{
     padding-top: 3rem;
   }
 
@@ -59,7 +59,7 @@
   }
 
   &.anim{
-    h1{
+    h2{
       animation-name: slideUp, fadeIn;
       animation-timeline: view();
       animation-range: 18% 33%;

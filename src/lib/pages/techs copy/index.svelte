@@ -71,7 +71,7 @@
   padding-top: var(--pad-top-page);
   /* padding-bottom: 5rem; */
   
-  h1{
+  h2{
     padding-top: 3rem;
   }
 
@@ -89,7 +89,7 @@
   }
 
   &.anim{
-    h1{
+    h2{
       animation-name: slideUpBackward, fadeOut;
       animation-duration: 400ms;
       animation-fill-mode: both;
@@ -103,7 +103,7 @@
     }
 
     &.visible{
-      h1{
+      h2{
         animation-name: slideUp, fadeIn;
         animation-delay: 0ms;
       }
