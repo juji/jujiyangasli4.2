@@ -45,6 +45,7 @@ class DoublePendulum {
   anim: ReturnType<typeof requestAnimationFrame> | null
   linelength: number
   linenum: number
+  totalLine: number
   itt: number
   stopped: boolean
   lineColor: string
@@ -70,9 +71,10 @@ class DoublePendulum {
     this.width = window.innerWidth
     this.height = window.innerHeight + additionalHeight
     
+    let ua = navigator.userAgent.toLowerCase()
     this.lineColor = // is iPhone ?
-      /ipad|iphone|ipod|safari/.test(navigator.userAgent.toLowerCase()) ?
-      this.iPhoneLine : this.normalLine
+      /ipad|iphone|ipod|safari/.test(ua) && !(/chrome/.test(ua))?
+        this.iPhoneLine : this.normalLine
 
     this.callback = callback
     this.canvas = canvas;
@@ -107,6 +109,7 @@ class DoublePendulum {
     this.anim = null
     this.linelength = 200
     this.linenum = 20000
+    this.totalLine = 0
     this.itt = 0
     this.stopped = false;
 
@@ -129,7 +132,8 @@ class DoublePendulum {
     if(this.line.length){
 
       this.context.beginPath();
-      let l = this.line.slice(this.linelength*this.itt);
+      
+      let l = this.line;
       this.context.moveTo(l[0][0],l[0][1]);
 
       for(let i in l){
@@ -142,15 +146,16 @@ class DoublePendulum {
 
     }
 
-    for(let i=0;i<this.linelength;i++)
-      this.update();
-
-    if(this.line.length < this.linenum && !this.stopped)
+    if(this.totalLine < this.linenum && !this.stopped){
+      this.line = []
+      for(let i=0;i<this.linelength;i++)
+        this.update();
       this.anim = requestAnimationFrame(() => this.draw());
+    }
 
     else {
 
-      cancelAnimationFrame(this.anim as number);
+      this.anim && cancelAnimationFrame(this.anim);
       this.callback && this.callback({
         src: this.canvas.toDataURL(),
         width: this.width,
@@ -165,6 +170,7 @@ class DoublePendulum {
     let g = this.gravity;
     let ag1 = this.a1 - Math.PI/2;
     let ag2 = this.a2 - Math.PI/2;
+    this.totalLine++;
 
     this.acc1 = -g * (2*this.m1 + this.m2) * Math.sin(ag1) - this.m2 * g * Math.sin(ag1 - 2*ag2);
     this.acc1 -= 2 * Math.sin(ag1 - ag2) * this.m2 * (Math.pow(this.vel2,2) * this.l2 + Math.pow(this.vel1,2) * this.l1 * Math.cos(ag1 - ag2));
