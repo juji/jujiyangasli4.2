@@ -41,7 +41,7 @@ class DoublePendulum {
   y1: number
   x2: number
   y2: number
-  line: [number, number][] | []
+  line: number[][]
   anim: ReturnType<typeof requestAnimationFrame> | null
   linelength: number
   linenum: number
@@ -186,13 +186,12 @@ class DoublePendulum {
     this.x2 = this.x1 + this.l2 * Math.cos(this.a2);
     this.y2 = this.y1 + this.l2 * Math.sin(this.a2);
     
-    this.line = [
-      ...this.line,
+    this.line.push(
       [
         this.x2*1,
         this.y2*1
       ]
-    ]
+    )
 
   }
 
