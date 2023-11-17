@@ -22,7 +22,7 @@
     }
   })
 
-  $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
+  $: webManifestLink = pwaInfo ? '/' + pwaInfo.webManifest.linkTag : '' 
 </script> 
   
 <svelte:head> 
