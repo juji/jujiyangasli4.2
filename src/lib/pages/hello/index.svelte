@@ -1,11 +1,12 @@
 <script lang="ts">
-	// import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
   import Menu from './menu.svelte'
   import '@fontsource-variable/source-code-pro';
 
-  // let scrollY:number;
+  let scrollY:number;
   let innerHeight: number;
-  // let scroll = 0;
+  let scroll = 0;
+  let noScroll = false;
   let last: HTMLDivElement;
   let paddingBottom:number;
 
@@ -19,19 +20,21 @@
     
   }
 
-  // $: scroll = Math.min(scrollY/innerHeight, 1) ?? 0
+  $: if(noScroll) scroll = Math.min(scrollY/innerHeight, 1) ?? 0
 
-  // onMount(() => {
-  //   console.log('onmount')
-  // })
+  onMount(() => {
+    // @ts-ignore
+    noScroll = typeof ScrollTimeline !== 'undefined'
+  })
 
 </script>
 
-<svelte:window bind:innerHeight />
+<svelte:window bind:innerHeight bind:scrollY />
 
 <div 
   class={'hello'}
-  style={`--window-height: ${innerHeight??0}px; --padding-bottom: ${paddingBottom??0}`}
+  class:noScroll
+  style={`--window-height: ${innerHeight??0}px; --scroll-y:${scroll}; --padding-bottom: ${paddingBottom??0}`}
   id="home">
   <!-- <img 
     src="https://1.gravatar.com/avatar/afb41904b6697862a2efc69237ebba4823dd73b5e07108b774656ddc667fb4ea?size=512"
@@ -55,7 +58,7 @@
       </h1>
       <br />
       <div id="smiley" class={'smiley'}><span>;)</span></div>
-      <Menu />
+      <Menu noScroll={noScroll} />
   </div>
   <div class="hello-gap" bind:this={last}>
   </div>

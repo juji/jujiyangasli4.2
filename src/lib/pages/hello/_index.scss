@@ -5,7 +5,7 @@
 
 .hello{
 
-  // --scroll-y: 0;
+  --scroll-y: 0;
   --padding-bottom: 0;
   --window-height: 0px;
   // border: 1px solid red;
@@ -150,6 +150,14 @@
     // @media screen and (max-height: 666px) {
     //   translate: 0 calc( 0.12px * var(--scroll-y));
     // }
+  }
+
+  &.noScroll{
+    .p1, .p2, .p3, .smiley{
+      &>span{
+        translate: 0 calc( var(--scroll-ratio) * var(--scroll-y) * var(--padding-bottom));
+      }
+    }
   }
 
 }

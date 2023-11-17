@@ -1,9 +1,10 @@
 <script lang="ts">
   import { MenuList } from '$lib/data/menu'
+  export let noScroll = false
 </script>
 
 
-<div class={'menu'}>
+<div class={'menu'} class:noScroll >
   {#each MenuList as menu}
     <a data-animation-id={menu.id} href={menu.href}>{menu.text}</a>
   {/each}
@@ -31,6 +32,10 @@
     animation-timeline: scroll();
     animation-range: 0px var(--window-height);
     /* translate: 0 calc( 1px * var(--scroll-y) * var(--padding-bottom)); */
+
+    &.noScroll{
+      translate: 0 calc( var(--scroll-ratio) * var(--scroll-y) * var(--padding-bottom));
+    }
 
 
     a{
