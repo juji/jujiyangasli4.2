@@ -26,8 +26,8 @@
       percent = '100%'
       clearTimeout(to)
       cover = false
+      loading = false
       setTimeout(() => {
-        loading = false
         percent = '0%'
       },500)
     })
