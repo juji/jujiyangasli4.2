@@ -19,8 +19,8 @@
     }, 1000)
     
     return new Promise(async (resolve) => {
+      
       resolve()
-
       await navigation.complete;
 
       percent = '100%'
