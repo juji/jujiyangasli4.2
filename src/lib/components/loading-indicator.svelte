@@ -59,7 +59,7 @@
     width: 100%;
     z-index: 1000;
     opacity: 0;
-    transition: opacity 100ms ease-out;
+    transition: opacity 200ms ease-out;
 
     &::before{
       content: ' ';
