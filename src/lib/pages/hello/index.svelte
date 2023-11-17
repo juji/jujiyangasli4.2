@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
   import Menu from './menu.svelte'
   import '@fontsource-variable/source-code-pro';
 
@@ -21,9 +21,9 @@
 
   $: scroll = Math.min(scrollY/innerHeight, 1) ?? 0
 
-  onMount(() => {
-    console.log('onmount')
-  })
+  // onMount(() => {
+  //   console.log('onmount')
+  // })
 
 </script>
 
