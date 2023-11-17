@@ -22,6 +22,7 @@
     }
   })
 
+  $: console.log('pwaInfo', pwaInfo)
   $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
 </script> 
   
