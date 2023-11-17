@@ -13,13 +13,13 @@
     loading = true
     percent = '72%'
 
+    if(to) clearTimeout(to)
+    to = setTimeout(() => {
+      cover = true
+    }, 1000)
+    
     return new Promise(async (resolve) => {
       resolve()
-
-      if(to) clearTimeout(to)
-      to = setTimeout(() => {
-        cover = true
-      }, 1000)
 
       await navigation.complete;
 
