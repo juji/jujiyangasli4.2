@@ -53,8 +53,8 @@
 
 </script>
 
-<div id="works" bind:this={observed}></div>
 <div
+  id="works" bind:this={observed}
   class={`works`}
   class:anim={true}
   class:visible>
