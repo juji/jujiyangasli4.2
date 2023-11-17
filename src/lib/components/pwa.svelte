@@ -22,10 +22,10 @@
     }
   })
 
-  $: console.log('pwaInfo', pwaInfo)
+  // $: console.log('pwaInfo', pwaInfo)
   $: webManifestLink = pwaInfo ? 
     pwaInfo.webManifest.linkTag.replace('href=\"./','href=\"/') : '' 
-  $: console.log('webManifestLink', webManifestLink)
+  // $: console.log('webManifestLink', webManifestLink)
 </script> 
   
 <svelte:head> 
