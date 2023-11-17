@@ -43,6 +43,11 @@
       position: absolute;
       transform-origin: center;
       background-color: var(--text);
+
+      @media (prefers-color-scheme: dark) {
+        background-color: var(--text);
+      }
+      
       height: 3px;
       width: 100%;
       border-radius: 3px;
