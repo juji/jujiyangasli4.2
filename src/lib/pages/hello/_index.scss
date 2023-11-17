@@ -5,9 +5,11 @@
 
 .hello{
 
-  --scroll-y: 0;
+  // --scroll-y: 0;
   --padding-bottom: 0;
+  --window-height: 0px;
   // border: 1px solid red;
+  // outline: 1px solid red;
 
   // logo size + 3rem
   // min-height: calc(100vh - 4rem - 4rem - 4rem - 3rem);
@@ -64,6 +66,15 @@
     font-weight: 400;
   }
 
+  @keyframes pScroll {
+    0%{
+      translate: 0 0;
+    }
+    100%{
+      translate: 0 calc(var(--scroll-ratio) * var(--padding-bottom))
+    }
+  }
+
   .p1{
     font-size: 18px;
     padding-bottom: 5px;
@@ -72,7 +83,15 @@
     animation-fill-mode: both;
     animation-delay: calc(var(--base-anim-delay) + 100ms);
     display: block;
-    translate: 0 calc( 0.2px * var(--scroll-y) * var(--padding-bottom));
+    
+    &>span{
+      display: block;
+      --scroll-ratio: 0.2px;
+      animation-name: pScroll;
+      animation-timeline: scroll();
+      animation-range: 0px var(--window-height);
+    }
+    // translate: 0 calc( 0.2px * var(--scroll-y) * var(--padding-bottom));
   }
 
   .p2{
@@ -83,7 +102,15 @@
     animation-fill-mode: both;
     animation-delay: calc(var(--base-anim-delay) + 200ms);
     display: block;
-    translate: 0 calc( 0.3px * var(--scroll-y) * var(--padding-bottom));
+    
+    &>span{
+      display: block;
+      --scroll-ratio: 0.3px;
+      animation-name: pScroll;
+      animation-timeline: scroll();
+      animation-range: 0px var(--window-height);
+    }
+    // translate: 0 calc( 0.3px * var(--scroll-y) * var(--padding-bottom));
   }
 
   .p3{
@@ -94,7 +121,15 @@
     animation-fill-mode: both;
     animation-delay: calc(var(--base-anim-delay) + 300ms);
     display: block;
-    translate: 0 calc( 0.5px * var(--scroll-y) * var(--padding-bottom));
+    
+    &>span{
+      display: block;
+      --scroll-ratio: 0.5px;
+      animation-name: pScroll;
+      animation-timeline: scroll();
+      animation-range: 0px var(--window-height);
+    }
+    // translate: 0 calc( 0.5px * var(--scroll-y) * var(--padding-bottom));
   }
 
   .smiley{
@@ -103,7 +138,15 @@
     animation-duration: 1000ms;
     animation-delay: calc(var(--base-anim-delay) + 1200ms);
     animation-fill-mode: both;
-    translate: 0 calc( 0.8px * var(--scroll-y) * var(--padding-bottom));
+    // translate: 0 calc( 0.8px * var(--scroll-y) * var(--padding-bottom));
+    
+    &>span{
+      display: block;
+      --scroll-ratio: 0.8px;
+      animation-name: pScroll;
+      animation-timeline: scroll();
+      animation-range: 0px var(--window-height);
+    }
     // @media screen and (max-height: 666px) {
     //   translate: 0 calc( 0.12px * var(--scroll-y));
     // }

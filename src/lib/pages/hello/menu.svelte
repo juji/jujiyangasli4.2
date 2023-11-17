@@ -16,8 +16,22 @@
 
   .menu{
 
+    @keyframes pScroll {
+      0%{
+        translate: 0 0;
+      }
+      100%{
+        translate: 0 calc(var(--scroll-ratio) * var(--padding-bottom))
+      }
+    }
+
+    --scroll-ratio: 1px;
     margin-top: 3rem;
-    translate: 0 calc( 1px * var(--scroll-y) * var(--padding-bottom));
+    animation-name: pScroll;
+    animation-timeline: scroll();
+    animation-range: 0px var(--window-height);
+    /* translate: 0 calc( 1px * var(--scroll-y) * var(--padding-bottom)); */
+
 
     a{
       animation-name: slideLeft, fadeIn;

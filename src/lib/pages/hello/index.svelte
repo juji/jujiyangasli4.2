@@ -3,9 +3,9 @@
   import Menu from './menu.svelte'
   import '@fontsource-variable/source-code-pro';
 
-  let scrollY:number;
+  // let scrollY:number;
   let innerHeight: number;
-  let scroll = 0;
+  // let scroll = 0;
   let last: HTMLDivElement;
   let paddingBottom:number;
 
@@ -19,7 +19,7 @@
     
   }
 
-  $: scroll = Math.min(scrollY/innerHeight, 1) ?? 0
+  // $: scroll = Math.min(scrollY/innerHeight, 1) ?? 0
 
   // onMount(() => {
   //   console.log('onmount')
@@ -27,11 +27,11 @@
 
 </script>
 
-<svelte:window bind:innerHeight bind:scrollY={scrollY} />
+<svelte:window bind:innerHeight />
 
 <div 
   class={'hello'}
-  style={`--scroll-y:${scroll??0}; --padding-bottom: ${paddingBottom??0}`}
+  style={`--window-height: ${innerHeight??0}px; --padding-bottom: ${paddingBottom??0}`}
   id="home">
   <!-- <img 
     src="https://1.gravatar.com/avatar/afb41904b6697862a2efc69237ebba4823dd73b5e07108b774656ddc667fb4ea?size=512"
@@ -44,17 +44,17 @@
   <div class="hello-content">
     <p class={`hellobig`}>Hello,</p>
     <h1>
-      <span class={'p1'}>My name is Tri Rahmat Gunadi,</span>
-      <span class={'p2'}>but people call me <a 
+      <span class={'p1'}><span>My name is Tri Rahmat Gunadi,</span></span>
+      <span class={'p2'}><span>but people call me <a 
         title="Github Link"
         rel='noreferrer noopener'
         target="_blank"
         href='https://github.com/juji'
-        class={'juji'}>juji</a>.</span>
-        <span class={'p3'}>I am a web developer.</span>
+        class={'juji'}>juji</a>.</span></span>
+        <span class={'p3'}><span>I am a web developer.</span></span>
       </h1>
       <br />
-      <div id="smiley" class={'smiley'}>;)</div>
+      <div id="smiley" class={'smiley'}><span>;)</span></div>
       <Menu />
   </div>
   <div class="hello-gap" bind:this={last}>
