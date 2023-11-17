@@ -24,7 +24,7 @@
 
   onMount(() => {
     // @ts-ignore
-    noScroll = typeof ScrollTimeline !== 'undefined'
+    noScroll = typeof ScrollTimeline === 'undefined'
   })
 
 </script>
