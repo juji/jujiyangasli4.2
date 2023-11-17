@@ -28,7 +28,9 @@
       cover = false
       setTimeout(() => {
         loading = false
-        percent = '0%'
+        setTimeout(() => {
+          percent = '0%'
+        },300)
       },500)
     })
   });
