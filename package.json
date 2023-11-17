@@ -38,6 +38,7 @@
   },
   "private": true,
   "scripts": {
+    "tunnel": "ssh -R 80:localhost:4173 serveo.net",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",

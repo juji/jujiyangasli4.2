@@ -43,6 +43,7 @@
 
   <title>Juji: Web Developer</title>
   <meta name="description" content="Hello, my name is Tri Rahmat Gunadi, and i like to code stuff." />
+  <meta name="color-scheme" content="light dark" />
 
   <meta property="og:url" content={`${$page.url.origin}`} />
   <meta property="og:type" content="website" />

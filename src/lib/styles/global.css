@@ -1,15 +1,13 @@
 :root {
 
   --max-width: 1100px;
+
   --bg: #111;
-  
   --text: #f0f0f0;
   --blue: #74b9ff;
-
   --header-bg: rgba(0,0,0,0); 
   --header-bg-small: rgba(0,0,0,0.6);
   --header-border-bottom: #222;
-
   --subtitle-header-bg: rgba(0,0,0,0.7);
   --image-view-bg: rgba(0,0,0,0.9);
 
@@ -20,6 +18,33 @@
 
   @media screen and (min-width: 768px){
     --pad-x: 4rem;
+  }
+}
+
+/* Prevent samsung and xiaomi browser from changing color */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg: #111;
+    --text: #f0f0f0;
+    --blue: #74b9ff;
+    --header-bg: rgba(0,0,0,0); 
+    --header-bg-small: rgba(0,0,0,0.6);
+    --header-border-bottom: #222;
+    --subtitle-header-bg: rgba(0,0,0,0.7);
+    --image-view-bg: rgba(0,0,0,0.9);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root{
+    --bg: #111;
+    --text: #f0f0f0;
+    --blue: #74b9ff;
+    --header-bg: rgba(0,0,0,0); 
+    --header-bg-small: rgba(0,0,0,0.6);
+    --header-border-bottom: #222;
+    --subtitle-header-bg: rgba(0,0,0,0.7);
+    --image-view-bg: rgba(0,0,0,0.9);
   }
 }
 
