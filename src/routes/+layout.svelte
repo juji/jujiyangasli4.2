@@ -4,6 +4,7 @@
   import { onNavigate } from '$app/navigation';
   import { page } from '$app/stores';
   
+  import LoadingIndicator from '$lib/components/loading-indicator.svelte';
   import Pwa from '$lib/components/pwa.svelte';
   import Header from '$lib/components/header/index.svelte'
   import Footer from '$lib/components/footer/index.svelte'
@@ -64,3 +65,4 @@
 <Header />
 <slot/>
 <Footer />
+<LoadingIndicator />
