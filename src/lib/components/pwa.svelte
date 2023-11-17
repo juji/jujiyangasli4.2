@@ -23,7 +23,8 @@
   })
 
   $: console.log('pwaInfo', pwaInfo)
-  $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
+  $: webManifestLink = pwaInfo ? 
+    pwaInfo.webManifest.linkTag.replace('href=\"./','href=\"/') : '' 
 </script> 
   
 <svelte:head> 
