@@ -26,7 +26,9 @@ class={`header ${smallHeader?'small':''}`}>
   <Container>
     <a class={`logo noline`} href="/">
       <!-- juji&nbsp;}; -->
-      <img src="/icons/logo.svg" alt="juji };" width="148.9093313316228" height="63.26752697064496" />
+      <img src="/icons/logo.svg" alt="juji };" 
+        width="148.9093313316228" 
+        height="63.26752697064496" />
     </a>
     <Menu />
   </Container>
