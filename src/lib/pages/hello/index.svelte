@@ -10,21 +10,17 @@
   let element: HTMLDivElement
   let paddingBottom:number;
 
-  $: if(element?.clientHeight){
-    const lastRect = last.getBoundingClientRect()
-
-    paddingBottom = Math.max(
-      0,
-      lastRect.height
-    )
-    
+  $: if(noScroll) {
+    scroll = Math.min(scrollY/(element?.clientHeight||0.001), 1) ?? 0
   }
-
-  $: if(noScroll) scroll = Math.min(scrollY/element?.clientHeight||0.001, 1) ?? 0
 
   onMount(() => {
     // @ts-ignore
     noScroll = typeof ScrollTimeline === 'undefined'
+    paddingBottom = Math.max(
+      0,
+      last.clientHeight
+    )
   })
 
   // $: console.log(scrollY)
