@@ -101,6 +101,7 @@ class={`header ${smallHeader?'small':''}`}>
       animation-duration: 300ms;
       animation-delay: 100ms;
       animation-fill-mode: both;
+      padding-left: 3px;
     }
   
     &.small {
