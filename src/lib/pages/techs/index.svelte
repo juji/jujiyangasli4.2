@@ -59,6 +59,10 @@
     </div> 
   {/each}
 
+  <p class="last">
+    and probaly some more..
+  </p>
+
 </div>
 
 <style lang="scss">
@@ -77,6 +81,11 @@
 
   .par{
     margin-bottom: 4rem;
+  }
+
+  .last{
+    color: #828282;
+    margin-left: 1rem;
   }
 
 
