@@ -72,9 +72,10 @@ class DoublePendulum {
     this.height = window.innerHeight + additionalHeight
     
     let ua = navigator.userAgent.toLowerCase()
-    this.lineColor = // is iPhone ?
-      /ipad|iphone|ipod|safari/.test(ua) && !(/chrome/.test(ua))?
-        this.iPhoneLine : this.normalLine
+    this.lineColor = this.iPhoneLine
+    // is iPhone ?
+      // /ipad|iphone|ipod|safari/.test(ua) && !(/chrome/.test(ua))?
+      //   this.iPhoneLine : this.normalLine
 
     this.callback = callback
     this.canvas = canvas;
