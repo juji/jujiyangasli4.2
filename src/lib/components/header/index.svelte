@@ -1,7 +1,7 @@
 <script lang="ts">
   import Container from '$lib/components/container.svelte'
   import Menu from './menu/index.svelte';
-  import '@fontsource/source-serif-pro';
+  // import '@fontsource/source-serif-pro';
   import { page } from '$app/stores';
 
   let scrollY = typeof window === 'undefined' ? 0 : window.scrollY
@@ -24,7 +24,10 @@
 style={`--scrollY: ${scroll}`}
 class={`header ${smallHeader?'small':''}`}> 
   <Container>
-    <a class={`logo noline`} href="/">juji&nbsp;};</a>
+    <a class={`logo noline`} href="/">
+      <!-- juji&nbsp;}; -->
+      <img src="/icons/logo.svg" alt="juji };" />
+    </a>
     <Menu />
   </Container>
 </header>
@@ -84,11 +87,11 @@ class={`header ${smallHeader?'small':''}`}>
     }
   
     .logo{
-      font-family: 'Source Serif Pro', sans-serif;
-      font-weight: 400;
-      color: var(--text);
+      /* font-family: 'Source Serif Pro', sans-serif; */
+      /* font-weight: 400; */
+      /* color: var(--text); */
       text-decoration: none;
-      font-size: 2rem;
+      /* font-size: 2rem; */
       line-height: calc(1rem * (6 - ((6 - 3.2) * clamp(0, var(--scrollY) / (163 - 42), 1))));
       scale: calc(1 * (2 - ((2 - 1) * clamp(0, var(--scrollY) / (163 - 42), 1))));
       translate: 0% calc(1px * (-34 - ((-34 - 0) * clamp(0, var(--scrollY) / (163 - 42), 1))));
@@ -101,7 +104,18 @@ class={`header ${smallHeader?'small':''}`}>
       animation-duration: 300ms;
       animation-delay: 100ms;
       animation-fill-mode: both;
-      padding-left: 3px;
+      /* padding-left: 3px; */
+
+      &>img{
+        width: 74px;
+        height: auto;
+      }
+
+      /* img{
+        width: 148px;
+        width: 74px;
+        height: auto;
+      } */
     }
   
     &.small {
