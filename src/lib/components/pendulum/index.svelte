@@ -37,7 +37,7 @@
       
       // on mobile this thing happens
       if(isTouch && windowWidth === winSize.windowWidth) 
-        return console.log('is mobile');
+        return console.log('PENDULUM mobile: ignore resize');
 
       img = null
       started = null

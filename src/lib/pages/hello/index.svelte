@@ -4,13 +4,13 @@
   import '@fontsource-variable/source-code-pro';
 
   let scrollY:number;
-  let innerHeight: number;
   let scroll = 0;
   let noScroll = false;
   let last: HTMLDivElement;
+  let element: HTMLDivElement
   let paddingBottom:number;
 
-  $: if(innerHeight){
+  $: if(element?.clientHeight){
     const lastRect = last.getBoundingClientRect()
 
     paddingBottom = Math.max(
@@ -20,21 +20,24 @@
     
   }
 
-  $: if(noScroll) scroll = Math.min(scrollY/innerHeight, 1) ?? 0
+  $: if(noScroll) scroll = Math.min(scrollY/element?.clientHeight||0.001, 1) ?? 0
 
   onMount(() => {
     // @ts-ignore
     noScroll = typeof ScrollTimeline === 'undefined'
   })
 
+  // $: console.log(scrollY)
+
 </script>
 
-<svelte:window bind:innerHeight bind:scrollY />
+<svelte:window bind:scrollY />
 
-<div 
+<div
+  bind:this={element}
   class={'hello'}
   class:noScroll
-  style={`--window-height: ${innerHeight??0}px; --scroll-y:${scroll}; --padding-bottom: ${paddingBottom??0}`}
+  style={`--window-height: ${element?.clientHeight??0}px; --scroll-y:${scroll}; --padding-bottom: ${paddingBottom??0}`}
   id="home">
   <!-- <img 
     src="https://1.gravatar.com/avatar/afb41904b6697862a2efc69237ebba4823dd73b5e07108b774656ddc667fb4ea?size=512"
