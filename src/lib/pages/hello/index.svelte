@@ -25,6 +25,10 @@
 
   // $: console.log(scrollY)
 
+  // using element?.clientHeight instead of window height
+  // to prevent scroll glitch in mobile, 
+  // where window height changes on scroll
+
 </script>
 
 <svelte:window bind:scrollY />
