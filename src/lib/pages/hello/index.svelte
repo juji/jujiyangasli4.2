@@ -9,19 +9,25 @@
   let last: HTMLDivElement;
   let element: HTMLDivElement
   let paddingBottom:number;
+  let innerHeight:number;
+
+  onMount(() => {
+    // @ts-ignore
+    noScroll = typeof ScrollTimeline === 'undefined'
+  })
 
   $: if(noScroll) {
     scroll = Math.min(scrollY/(element?.clientHeight||0.001), 1) ?? 0
   }
 
-  onMount(() => {
-    // @ts-ignore
-    noScroll = typeof ScrollTimeline === 'undefined'
+  $: if(innerHeight){
     paddingBottom = Math.max(
       0,
       last.clientHeight
     )
-  })
+  }
+
+  
 
   // using element?.clientHeight instead of window height
   // to prevent scroll glitch in mobile, 
@@ -29,7 +35,7 @@
 
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:innerHeight bind:scrollY />
 
 <div
   bind:this={element}
