@@ -38,7 +38,7 @@
   <link rel="icon" href={`${$page.url.origin}/icons/android-chrome-512x512.png`} type="image/png" sizes="512x512" />
   <link rel="icon" href={`${$page.url.origin}/icons/favicon.svg`} type="image/svg+xml" />
   <link rel="apple-touch-icon" href={`${$page.url.origin}/icons/apple-touch-icon.png`} sizes="180x180" />
-  <link rel="mask-icon" href={`${$page.url.origin}/favicon.svg`} color="#000000" />
+  <link rel="mask-icon" href={`${$page.url.origin}/icons/favicon.svg`} color="#000000" />
   <meta name="theme-color" content="#000000" />
 
   <title>Juji: Web Developer</title>
