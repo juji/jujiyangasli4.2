@@ -29,10 +29,6 @@
     lastWork = sessionStorage.getItem('last-work') || null
     sessionStorage.removeItem('last-work')
 
-    setTimeout(() => {
-      if(lastWork) lastWork = null
-    },1000)
-
     if(typeof IntersectionObserver === 'undefined') {
       return () => {}
     }
@@ -54,6 +50,20 @@
     }
 
   })
+
+  // turn off lastWork when not visible
+  // sadly the visible boolean comes after a few miliseconds
+  let to: ReturnType<typeof setTimeout>;
+  $: if(!visible && lastWork) {
+
+    if(to) clearTimeout(to)
+    to = setTimeout(() => {
+      if(lastWork && !visible) lastWork = null
+    },200)
+    
+  }else{
+    if(to) clearTimeout(to)
+  }
 
 </script>
 
