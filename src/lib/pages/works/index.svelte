@@ -29,6 +29,10 @@
     lastWork = sessionStorage.getItem('last-work') || null
     sessionStorage.removeItem('last-work')
 
+    setTimeout(() => {
+      if(lastWork) lastWork = null
+    },1000)
+
     if(typeof IntersectionObserver === 'undefined') {
       return () => {}
     }
