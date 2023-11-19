@@ -58,8 +58,15 @@
     top:0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px);
-    background-color: rgba(0,0,0,0.8);
+    /* backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.8); */
+    backdrop-filter: blur(2px);
+    background: linear-gradient(
+      90deg, 
+      rgba(0,0,0,0) 0%, 
+      rgba(0,0,0,0.9) 30%, 
+      rgba(0,0,0,1) 100%
+    );
     opacity: 0;
     transition: opacity 500ms;
   }
@@ -70,16 +77,17 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
+    margin-right: 6rem;
 
     &>div{
-      text-align: center;
+      text-align: right;
       h3{
         font-weight: 200;
         margin-bottom: 0.2rem;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         opacity: 0;
-        transform: translateY(-21px);
+        transform: translateX(-21px);
         transition: opacity 0ms, transform 0ms;
       }
       span{
@@ -88,15 +96,15 @@
         margin-bottom: 0.2rem;
         font-size: 1.4rem;
         opacity: 0;
-        transform: translateY(21px);
+        transform: translateX(-21px);
         transition: opacity 0ms, transform 0ms;
       }
     }
   }
 
   @media screen and (min-width: 768px) {
+
     &:before{
-      backdrop-filter: blur(2px);
       background: linear-gradient(
         90deg, 
         rgba(0,0,0,0) 0%, 
@@ -106,18 +114,10 @@
     }
 
     &>div{
+      justify-content: center;
       transform: translateX(
-        calc((var(--max-width)/8))
+        calc((var(--max-width)/4))
       );
-      &>div{
-        text-align: left;
-        h3{
-          transform: translateX(21px);
-        }
-        span{
-          transform: translateX(21px);
-        }
-      }
     }
   }
 
@@ -133,12 +133,12 @@
     &>div{
       &>div{
         h3{
-          margin-bottom: 2rem;
-          font-size: 3rem;
+          margin-bottom: 1rem;
+          font-size: 2.3rem;
         }
         span{
-          margin-bottom: 1rem;
-          font-size: 2rem;
+          margin-bottom: 0.68rem;
+          font-size: 1.6rem;
         }
       }
     }
