@@ -16,7 +16,7 @@
     noScroll = typeof ScrollTimeline === 'undefined'
   })
 
-  $: if(noScroll) {
+  $: if(noScroll && innerHeight) {
     scroll = Math.min(scrollY/(element?.clientHeight||0.001), 1) ?? 0
   }
 
