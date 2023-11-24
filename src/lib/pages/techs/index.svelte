@@ -6,8 +6,11 @@
 
   let observed: HTMLDivElement;
   let visible = false
+  let js = false
 
   onMount(() => {
+
+    js = true
     
     if(typeof IntersectionObserver === 'undefined') {
       return () => {}
@@ -36,7 +39,7 @@
 <div 
   bind:this={observed}
   class={`tech`} 
-  class:anim={true}
+  class:anim={js}
   class:visible
   id="techs">
 
@@ -51,7 +54,7 @@
       {#each group as tech, i}
         <TechCell
           item={tech}
-          animEnabled={true}
+          animEnabled={js}
           parentVisible={visible}
           animationDelay={300 + (i * 100)}
         />

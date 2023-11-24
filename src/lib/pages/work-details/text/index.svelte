@@ -11,6 +11,7 @@
   let fixed = false;
   let padHeight = 0
   let text: HTMLDivElement
+  let js = false
 
   const {
     content,
@@ -23,6 +24,8 @@
   onMount(() => {
     
     padHeight = text.getBoundingClientRect().height
+    console.log(text.getBoundingClientRect())
+    js = true
 
     if(typeof IntersectionObserver === 'undefined') {
       return () => {}
@@ -31,6 +34,7 @@
     let observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.target === observed) {
+          console.log('intersecting', entry.isIntersecting)
           fixed = entry.isIntersecting
         }
       })
@@ -50,6 +54,7 @@
 
 <div 
   class={`text`}
+  class:js
   style={`--pad-height: ${padHeight}px`}
 >
   <Container>
@@ -63,7 +68,7 @@
       />
       <!-- <Lorsum /> -->
     </div>
-    <div bind:this={observed}></div>
+    <div class="observed" bind:this={observed}></div>
   </Container>
 </div>
 

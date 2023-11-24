@@ -3,10 +3,12 @@
   import Menu from './menu/index.svelte';
   // import '@fontsource/source-serif-pro';
   import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
   let scrollY = typeof window === 'undefined' ? 0 : window.scrollY
   let smallHeader = true
-  $: smallHeader = $page.url.pathname !== '/'
+  let noscript = true
+  $: smallHeader = $page.url.pathname !== '/' || noscript
 
   // magic number, that's okay bro... just let it be
   let scroll = 0
@@ -15,6 +17,10 @@
   } else {
     scroll = 163
   }
+
+  onMount(() => {
+    noscript = false
+  })
   
 </script>
 

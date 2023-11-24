@@ -4,12 +4,14 @@
   import RiBusinessMailOpenFill from "svelte-icons-pack/ri/RiBusinessMailOpenFill";
   import RiDesignPencilFill from "svelte-icons-pack/ri/RiDesignPencilFill";
   import RiBuildingsHomeFill from "svelte-icons-pack/ri/RiBuildingsHomeFill";
+  import RiDevelopmentTerminalBoxFill from "svelte-icons-pack/ri/RiDevelopmentTerminalBoxFill";
   import RiDeviceGamepadFill from "svelte-icons-pack/ri/RiDeviceGamepadFill";
   import { MenuList } from "$lib/data/menu";
 
   const menuIcon:{[key: string]: any} = {
     works: RiDesignPencilFill,
-    techs: RiDeviceGamepadFill,
+    play: RiDeviceGamepadFill,
+    techs: RiDevelopmentTerminalBoxFill,
     contact: RiBusinessMailOpenFill
   }
 </script>
@@ -34,14 +36,14 @@
   left: 0;
   bottom: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
   a{
     text-align: center;
     padding: 1rem 0;
   }
 
-  @media screen and (min-width: 420px) {
+  @media screen and (min-width: 512px) {
     display: none;
   }
 }

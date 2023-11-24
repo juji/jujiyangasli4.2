@@ -53,7 +53,7 @@
       width: auto;
       display: none;
       align-items: center;
-      @media screen and (min-width: 420px) {
+      @media screen and (min-width: 512px) {
         display: flex;
       }
     }

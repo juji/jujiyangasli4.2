@@ -10,15 +10,19 @@
   animation-fill-mode: both;
 
   position: relative;
+
+  /* .observed{
+    outline: 1px solid red;
+  } */
   
   .pad, .visible{
     max-width: 600px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 1rem 2rem;
-    padding-top: 55px;
-    padding-bottom: 89px; // detect bottom intersection at
+    /* padding-top: 55px;
+    padding-bottom: 89px; // detect bottom intersection at */
     line-height: 1.63rem;
-    // outline: 1px solid red;
+    /* outline: 1px solid red; */
     
     :global(ul),:global(ol){ 
       margin-left: 1.2rem;
@@ -57,11 +61,10 @@
 
   .pad{
     opacity: 0;
-    height: var(--pad-height);
   }
 
   .visible{
-    position: absolute;
+    /* position: absolute; */
     top:0;
     left:0;
   }
@@ -73,14 +76,42 @@
     }
   }
 
-  @media screen and (min-width: 1024px) {
-    .visible.fixed{
-      width: 432px;
-      position: fixed;
-      bottom: 0px;
-      top: auto;
-      height: auto;
-      left: calc(50% + min(var(--max-width),100%) / 2 - 432px);
+  @media screen and (min-width: 600px) {
+    .pad, .visible{
+      padding-left: 6rem;
+      padding-right: 6rem;
     }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .pad, .visible{
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 55px;
+      padding-bottom: 89px; // detect bottom intersection at
+    }
+
+    .visible{
+      position: absolute;
+    }
+
+    &.js{
+      .pad{
+        height: var(--pad-height);
+      }
+      .pad, .visible{
+        margin: 0 auto;
+      }
+      .visible.fixed{
+        width: 432px;
+        position: fixed;
+        bottom: 0px;
+        top: auto;
+        height: auto;
+        left: calc(50% + min(var(--max-width),100%) / 2 - 432px);
+      }
+    }
+
+
   }
 }

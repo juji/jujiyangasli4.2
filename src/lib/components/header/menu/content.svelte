@@ -177,16 +177,22 @@
               var(--tdh) + calc(var(--tdg) * 2)
             );
           }
-    
-          &[data-animation-id="techs"]{
+
+          &[data-animation-id="play"]{
             transition-delay: calc(
               var(--tdh) + calc(var(--tdg) * 3)
             );
           }
     
-          &[data-animation-id="contact"]{
+          &[data-animation-id="techs"]{
             transition-delay: calc(
               var(--tdh) + calc(var(--tdg) * 4)
+            );
+          }
+    
+          &[data-animation-id="contact"]{
+            transition-delay: calc(
+              var(--tdh) + calc(var(--tdg) * 5)
             );
           }
         }
@@ -211,13 +217,14 @@
 
     &:before{
       content: unset;
-      // border: 1px solid red;
-      // opacity: 1;
+      /* border: 1px solid red; */
+      /* opacity: 1; */
     }
 
     &>div{
       padding: 0;
       display: grid;
+      margin-right: 0;
       animation-name: gridShow;
       animation-duration: 500ms;
       animation-delay: 500ms;

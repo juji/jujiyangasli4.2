@@ -11,8 +11,11 @@
 
   let visible = false
   let observed: HTMLDivElement
+  let js = false
 
   onMount(() => {
+
+    js = true
     
     if(typeof IntersectionObserver === 'undefined') {
       return () => {}
@@ -41,7 +44,7 @@
 
 <div 
   class={`contact`}
-  class:anim={true}
+  class:anim={js}
   class:visible={visible}
   bind:this={observed}
   id="contact">
@@ -81,7 +84,7 @@
   </div>
 
   <ContactForm 
-    anim={true}
+    anim={js}
     visible={visible}
   />
 </div>

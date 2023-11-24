@@ -44,19 +44,24 @@
       animation-fill-mode: both;
       animation-timing-function: cubic-bezier(.41,1.59,.71,1.11);
       /* animation-timing-function: cubic-bezier(.71,.46,.35,1.62); */
-      margin-right: 1.5rem;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
       display: inline-block;
 
       &[data-animation-id="works"]{
         animation-delay: calc(var(--base-anim-delay) + 500ms);
       }
 
-      &[data-animation-id="techs"]{
+      &[data-animation-id="play"]{
         animation-delay: calc(var(--base-anim-delay) + 600ms);
       }
 
-      &[data-animation-id="contact"]{
+      &[data-animation-id="techs"]{
         animation-delay: calc(var(--base-anim-delay) + 700ms);
+      }
+
+      &[data-animation-id="contact"]{
+        animation-delay: calc(var(--base-anim-delay) + 800ms);
       }
     }
 

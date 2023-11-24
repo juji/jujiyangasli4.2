@@ -7,6 +7,7 @@
 
   export let works: WorkSingle[];
   let visible = false
+  let anim = false
   
   // prevent smooth scroll while navigating to work
   onNavigate((navigation) => {
@@ -26,6 +27,7 @@
   let observed: HTMLDivElement
   onMount(() => {
     
+    anim = true
     lastWork = sessionStorage.getItem('last-work') || null
     sessionStorage.removeItem('last-work')
 
@@ -70,7 +72,7 @@
 <div
   id="works" bind:this={observed}
   class={`works`}
-  class:anim={true}
+  class:anim
   class:visible>
 
   <h2 class={`h1`}>
@@ -84,7 +86,7 @@
     <Thumbnail
       paused={lastWork !== work.id}
       animationDelay={500 + (i * 100)}
-      visible={visible}
+      visible={anim ? visible : true}
       work={work} />
     {/each}
   </div>
