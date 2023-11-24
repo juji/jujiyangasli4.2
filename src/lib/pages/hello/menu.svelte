@@ -6,7 +6,10 @@
 
 <div class={'menu'} class:noScroll >
   {#each MenuList as menu}
-    <a data-animation-id={menu.id} href={menu.href}>{menu.text}</a>
+    <a data-animation-id={menu.id} 
+      target={menu.newTab?'_blank':''}
+      rel="noreferer noopener"
+      href={menu.href}>{menu.text}</a>
   {/each}
 </div>
 

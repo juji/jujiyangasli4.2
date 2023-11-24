@@ -14,7 +14,11 @@
         </span>
       {#each MenuList as menu}
         <span data-animation-id={menu.id}>
-          <a on:click href={menu.href}>{menu.text}</a>
+          <a on:click 
+            href={menu.href}
+            target={menu.newTab?'_blank':''}
+            rel="noreferer noopener"
+          >{menu.text}</a>
         </span>
       {/each}
     </div>

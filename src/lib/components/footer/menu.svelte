@@ -22,7 +22,11 @@
   </a>
   {#each MenuList as menu}
     {#if menuIcon[menu.id]}
-      <a href={menu.href}>
+      <a 
+        href={menu.href}
+        target={menu.newTab?'_blank':''}
+        rel="noreferer noopener"
+      >
         <Icon src={menuIcon[menu.id]} size="1.618rem" />
       </a>
     {/if}
