@@ -108,7 +108,7 @@
 
   &.anim{
 
-    --delay-init: 800ms;
+    --delay-init: 900ms;
     h3, label, input, textarea, button, .server-message{
       animation-name: fadeOut, slideUpBackward;
       animation-duration: 300ms;

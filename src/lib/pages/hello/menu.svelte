@@ -55,15 +55,15 @@
         animation-delay: calc(var(--base-anim-delay) + 500ms);
       }
 
-      &[data-animation-id="play"]{
+      &[data-animation-id="techs"]{
         animation-delay: calc(var(--base-anim-delay) + 600ms);
       }
 
-      &[data-animation-id="techs"]{
+      &[data-animation-id="contact"]{
         animation-delay: calc(var(--base-anim-delay) + 700ms);
       }
 
-      &[data-animation-id="contact"]{
+      &[data-animation-id="play"]{
         animation-delay: calc(var(--base-anim-delay) + 800ms);
       }
     }

@@ -44,6 +44,10 @@
     }
   }
 
+  .play{
+    margin-top: 2rem;
+  }
+
   &.anim{
     
     .h1{
@@ -103,6 +107,13 @@
       }
     }
 
+    .play{
+      animation-name: slideUpBackward, fadeOut;
+      animation-duration: 400ms;
+      animation-delay: 700ms;
+      animation-fill-mode: both;
+    }
+
     &.visible{
       .h1{
         animation-name: slideUp, fadeIn;
@@ -136,6 +147,10 @@
         #skype{
           animation-name: slideLeft, fadeIn;
         }
+      }
+
+      .play{
+        animation-name: slideUp, fadeIn;
       }
     }
   }

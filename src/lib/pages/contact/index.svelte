@@ -83,6 +83,13 @@
       id={`skype`} href="skype://juji.gunadi?chat"><Icon src={IoLogoSkype} size="2.618rem" /></a>
   </div>
 
+  <div class="play">
+    Checkout my <a 
+      href="https://jujiplay.com"
+      target="_blank"
+      rel="noopener noreferer">Play Site</a>.
+  </div>
+
   <ContactForm 
     anim={js}
     visible={visible}
