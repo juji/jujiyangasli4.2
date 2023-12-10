@@ -7,7 +7,7 @@ Great times..!!
 I met [Max Burt](https://www.maxburt.com/) online, and
 he needed someone to continue developing WheelEasy with him.
 
-We rewritten the site from scratch, added loads of stuff, and 4 years passed while we do this. Now, 
+We've rewritten the site from scratch, added loads of stuff, and 4 years passed while we do this. Now, 
 it's alive with users and volunteers, *viola*!!
 
 
