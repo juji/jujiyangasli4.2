@@ -15,7 +15,10 @@
 			"vite-plugin-pwa/svelte",
 			"dom-view-transitions"
     ]
-	}
+	},
+	"exclude": [
+		"images"
+	]
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
 	// If you want to overwrite includes/excludes, make sure to copy over the relevant includes/excludes
