@@ -5,14 +5,12 @@ export const html = (
   email: string, 
   message: string
 ) => `
+${message}
+====<br />
 <br />
-Yo, this person have just sent you a message:<br />
+This message was sent by:<br />
 Name: ${name}<br />
 Email: <a href="mailto:${email}">${email}</a><br /><br />
-
-====<br />
-Message:<br /><br />
-${message}
 `
 
 export const text = (
@@ -21,14 +19,11 @@ export const text = (
   message: string
 ) => `
 
-Yo, this person have just sent you a message:
+${message}
+====
+
+This message was sent by:
 
 Name: ${name}
 Email: ${email}
-
-====
-Message:
-
-${message}
-
 `

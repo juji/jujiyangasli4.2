@@ -14,7 +14,7 @@ export const html = (
 You just sent Juji a message.<br />
 He will send you a message shortly.. <br />
 <br />
-That is.. if he's not busy saving the world (aka sleeping).<br />
+That is.. if he's not busy playing his PlayStation.<br />
 <br />
 Thank you for your message..<br />
 <br />
@@ -43,7 +43,7 @@ Hi, ${name}!!
 You just sent Juji a message.
 He will send you a message shortly.. 
 
-That is.. if he's not busy saving the world (aka sleeping).
+That is.. if he's not busy playing his PlayStation.
 
 Thank you for your message.. ;)
 
