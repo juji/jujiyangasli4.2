@@ -52,8 +52,8 @@ class DoublePendulum {
 
   fillStyle = '#111'
   lineWidth = 0.5
-  iPhoneLine = '#191919'
-  normalLine = '#242424'
+  iPhoneLine = '#252525'
+  normalLine = '#343434'
 
 
   constructor(params:DoublePendulumProps){
@@ -76,6 +76,8 @@ class DoublePendulum {
       // is iPhone ?
       /ipad|iphone|ipod|safari/.test(ua) && !(/chrome/.test(ua))?
         this.iPhoneLine : this.normalLine
+    
+    // console.log('this.lineColor', this.lineColor)
 
     this.callback = callback
     this.canvas = canvas;
