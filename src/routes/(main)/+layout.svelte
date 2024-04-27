@@ -4,7 +4,13 @@
 
 
 
-<main>
+<!-- How to comment out attributes -->
+<main
+  {...{/* this is a cpmment for attributes */}}
+  {...{/* 
+    you can have multi line comment
+  */}}
+>
   <Container>
     <slot/>
   </Container>
