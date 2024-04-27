@@ -6,8 +6,8 @@
 
 <!-- How to comment out attributes -->
 <main
-  {...{/* this is a cpmment for attributes */}}
   {...{/* 
+    this is a comment for attributes
     you can have multi line comment
   */}}
 >
