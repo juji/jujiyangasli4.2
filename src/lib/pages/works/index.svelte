@@ -42,7 +42,7 @@
         }
       })
     },{
-      rootMargin: '1000% 0px -25% 0px'
+      rootMargin: '1000% 0px -10% 0px'
     });
 
     observer.observe(observed);
@@ -70,12 +70,13 @@
 </script>
 
 <div
-  id="works" bind:this={observed}
+  id="works" 
+  bind:this={observed}
   class={`works`}
   class:anim
   class:visible>
 
-  <h2 class={`h1`}>
+  <h2>
     Works
     <TitleLink href="/#works" label="Works" />
   </h2>

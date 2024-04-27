@@ -181,22 +181,28 @@
               var(--tdh) + calc(var(--tdg) * 2)
             );
           }
-    
-          &[data-animation-id="techs"]{
+
+          &[data-animation-id="play"]{
             transition-delay: calc(
               var(--tdh) + calc(var(--tdg) * 3)
             );
           }
     
-          &[data-animation-id="contact"]{
+          &[data-animation-id="techs"]{
             transition-delay: calc(
               var(--tdh) + calc(var(--tdg) * 4)
             );
           }
-
-          &[data-animation-id="play"]{
+    
+          &[data-animation-id="contact"]{
             transition-delay: calc(
               var(--tdh) + calc(var(--tdg) * 5)
+            );
+          }
+
+          &[data-animation-id="blog"]{
+            transition-delay: calc(
+              var(--tdh) + calc(var(--tdg) * 6)
             );
           }
         }

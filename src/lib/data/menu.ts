@@ -7,6 +7,11 @@ export const MenuList = [
     href: '/#works'
   },
   {
+    text: 'Play',
+    id: 'play',
+    href: '/#play',
+  },
+  {
     text: 'Techs',
     id: 'techs',
     href: '/#techs'
@@ -17,9 +22,9 @@ export const MenuList = [
     href: '/#contact'
   },
   {
-    text: 'Play',
-    id: 'play',
-    href: 'https://jujiplay.com',
+    text: 'Blog',
+    id: 'blog',
+    href: 'https://blog.jujiyangasli.com',
     newTab: true
   },
 ]

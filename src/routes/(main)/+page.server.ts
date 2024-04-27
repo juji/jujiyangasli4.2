@@ -1,4 +1,5 @@
 import { works } from '$lib/data/works/data.server';
+import { play } from '$lib/data/play/data.server';
 import { COOKIE_NAME } from '$lib/vars.server'
 import rs from 'randomstring'
 
@@ -16,6 +17,7 @@ export function load({ cookies }) {
         ...rest,
         image: images[0]
       }
-    })
+    }),
+    play
 	};
 }

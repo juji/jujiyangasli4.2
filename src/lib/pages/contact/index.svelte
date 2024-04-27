@@ -28,7 +28,7 @@
         }
       })
     },{
-      rootMargin: '1000% 0px -25% 0px'
+      rootMargin: '1000% 0px -10% 0px'
     });
 
     observer.observe(observed);
@@ -49,7 +49,7 @@
   bind:this={observed}
   id="contact">
   
-  <h2 class={`h1`}>
+  <h2 class={`h2`}>
     Contact
     <TitleLink href="/#contact" label="Contact" />
   </h2>
@@ -85,9 +85,9 @@
 
   <div class="play">
     Checkout my <a 
-      href="https://jujiplay.com"
+      href="https://blog.jujiyangasli.com"
       target="_blank"
-      rel="noopener noreferer">Play Site</a>.
+      rel="noopener noreferer">Blog</a>.
   </div>
 
   <ContactForm 

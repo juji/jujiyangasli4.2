@@ -23,7 +23,7 @@
         }
       })
     },{
-      rootMargin: '1000% 0px -25% 0px'
+      rootMargin: '1000% 0px -10% 0px'
     });
 
     observer.observe(observed);
@@ -43,7 +43,7 @@
   class:visible
   id="techs">
 
-  <h2 class={`h1`} >
+  <h2 >
     Technologies
     <TitleLink href="/#techs" label="Techs" />
   </h2>
