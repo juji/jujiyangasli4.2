@@ -81,7 +81,8 @@
           on:click|preventDefault={setZoom(image)} 
           href={image.original.url} target="_blank">
           <Image 
-            draggable={false} 
+            draggable={false}
+            gtm-zoom
             src={$page.url.origin + image.thumbnail.url}
             style={i?`animation-delay: ${i*500}ms`:`view-transition-name: ${image.id}`}
             alt={image.title}
