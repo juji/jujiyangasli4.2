@@ -70,7 +70,8 @@ class:visible
 <style>
 
 .play{
-  
+
+  --transition-delay: 100ms;
   padding-top: var(--pad-top-page);
 
   & > .title{
@@ -79,6 +80,14 @@ class:visible
 
     & h2, & p{
       transition: translate 300ms, opacity 300ms;
+    }
+
+    & h2{
+      transition-delay: var(--transition-delay);
+    }
+
+    & p{
+      transition-delay: calc(var(--transition-delay) * 2);
     }
   }
 
@@ -94,6 +103,18 @@ class:visible
       border: 1px solid rgb(53, 53, 53);
       border-radius: 5px;
       position: relative;
+
+      &.playBoid{
+        transition-delay: calc(var(--transition-delay) * 3);
+      }
+
+      &.playCliffordDejong{
+        transition-delay: calc(var(--transition-delay) * 4);
+      }
+
+      &.playCircularOrbit{
+        transition-delay: calc(var(--transition-delay) * 5);
+      }
 
       & > p {
         position:absolute;
@@ -130,8 +151,6 @@ class:visible
 
   &.anim{
 
-    --transition-delay: 100ms;
-
     & .title{
       & h2{
         translate: 0px 21px;
@@ -141,7 +160,6 @@ class:visible
       & p{
         translate: 0px 21px;
         opacity: 0;
-        transition-delay: var(--transition-delay);
       }
     }
 
@@ -149,18 +167,6 @@ class:visible
       & a{
         translate: 0px 21px;
         opacity: 0;
-
-        &.playBoid{
-          transition-delay: calc(var(--transition-delay) * 2);
-        }
-
-        &.playCliffordDejong{
-          transition-delay: calc(var(--transition-delay) * 3);
-        }
-
-        &.playCircularOrbit{
-          transition-delay: calc(var(--transition-delay) * 4);
-        }
       }
     }
 
