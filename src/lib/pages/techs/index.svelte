@@ -43,7 +43,7 @@
   class:visible
   id="techs">
 
-  <h2 >
+  <h2 class={`h1`} >
     Technologies
     <TitleLink href="/#techs" label="Techs" />
   </h2>
