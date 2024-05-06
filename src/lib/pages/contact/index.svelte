@@ -72,7 +72,7 @@
     <a target="_blank" rel="noopener noreferrer" 
       title="NPM page"
       aria-label="Go to juji's npm page"
-      id={`npm`} href="https://npmjs.com/~jujiyangasli"><Icon src={IoLogoNpm} size="2.618rem" /></a>
+      id={`npm`} href="https://npmjs.com/~juji"><Icon src={IoLogoNpm} size="2.618rem" /></a>
     <a target="_blank" rel="noopener noreferrer" 
       title="LinkedIn page"
       aria-label="Go to juji's linkedin page"
