@@ -61,10 +61,11 @@
   &:hover{
     &>.image{
       &>:global(img){
-        width: 104%;
+        border-radius: 0px;
+        /* width: 104%;
         height: 104%;
         top: -2%;
-        left: -2%;
+        left: -2%; */
       }
     }
   }
