@@ -103,6 +103,7 @@ class:visible
       border: 1px solid rgb(53, 53, 53);
       border-radius: 5px;
       position: relative;
+      background-color: black;
 
       &.playBoid{
         transition-delay: calc(var(--transition-delay) * 3);
