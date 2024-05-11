@@ -50,7 +50,7 @@ class:visible
 
   <div class="title">
     <h2>Play <TitleLink href="/#play" label="Play" /></h2>
-    <p>On my spare time: <a 
+    <p>On my leisure time: <a 
       target="_blank" rel="noopener noreferrer"
       href="https://jujiplay.com">jujiplay.com</a></p>
   </div>
