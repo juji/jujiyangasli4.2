@@ -77,14 +77,14 @@ export const techs: TechItem[][] = [
       image: '/images/tech-avif/nodejs.avif',
       url: 'https://nodejs.org'
     },
-    {
-      id: 'bun',
-      width: 80,
-      height: 70,
-      title: 'Bun',
-      image: '/images/tech/bun.svg',
-      url: 'https://bun.sh/'
-    },
+    // {
+    //   id: 'bun',
+    //   width: 80,
+    //   height: 70,
+    //   title: 'Bun',
+    //   image: '/images/tech/bun.svg',
+    //   url: 'https://bun.sh/'
+    // },
     {
       id: 'firebase',
       width: 500,

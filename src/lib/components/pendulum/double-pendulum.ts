@@ -53,7 +53,7 @@ class DoublePendulum {
   fillStyle = '#111'
   lineWidth = 0.5
   iPhoneLine = '#252525'
-  normalLine = '#343434'
+  normalLine = '#424242'
 
 
   constructor(params:DoublePendulumProps){
