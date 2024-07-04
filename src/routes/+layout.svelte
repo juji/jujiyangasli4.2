@@ -6,6 +6,7 @@
   
   import LoadingIndicator from '$lib/components/loading-indicator.svelte';
   import Pwa from '$lib/components/pwa.svelte';
+  import MouseWheel from '$lib/components/mouse-wheel.svelte';
   import Header from '$lib/components/header/index.svelte'
   import Footer from '$lib/components/footer/index.svelte'
   import Pendulum from '$lib/components/pendulum/index.svelte';
@@ -61,6 +62,7 @@
 
 </svelte:head>
 
+<MouseWheel />
 <Pwa />
 <Pendulum />
 <Header />
