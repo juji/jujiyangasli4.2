@@ -24,7 +24,7 @@
   onMount(() => {
     
     padHeight = text.getBoundingClientRect().height
-    console.log(text.getBoundingClientRect())
+    // console.log(text.getBoundingClientRect())
     js = true
 
     if(typeof IntersectionObserver === 'undefined') {
@@ -34,7 +34,7 @@
     let observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.target === observed) {
-          console.log('intersecting', entry.isIntersecting)
+          // console.log('intersecting', entry.isIntersecting)
           fixed = entry.isIntersecting
         }
       })

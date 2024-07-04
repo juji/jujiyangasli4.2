@@ -49,6 +49,9 @@ export default defineConfig({
 			}
 		})
 	],
+	ssr: {
+		noExternal: '@svelte/kit'
+	},
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}

@@ -5,6 +5,8 @@
   --bg: #111;
   --text: #f0f0f0;
   --blue: #74b9ff;
+  --scrollbar-color: #555;
+
   --header-bg: rgba(0,0,0,0); 
   --header-bg-small: rgba(0,0,0,0.6);
   --header-border-bottom: #222;
@@ -27,6 +29,7 @@
     --bg: #111;
     --text: #f0f0f0;
     --blue: #74b9ff;
+    --scrollbar-color: #555;
     --header-bg: rgba(0,0,0,0); 
     --header-bg-small: rgba(0,0,0,0.6);
     --header-border-bottom: #222;
@@ -40,6 +43,7 @@
     --bg: #111;
     --text: #f0f0f0;
     --blue: #74b9ff;
+    --scrollbar-color: #555;
     --header-bg: rgba(0,0,0,0); 
     --header-bg-small: rgba(0,0,0,0.6);
     --header-border-bottom: #222;
@@ -52,13 +56,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scrollbar-color: #333 rgba(0,0,0,0);
+  scrollbar-color: var(--scrollbar-color) rgba(0,0,0,0);
   scrollbar-width: thin;
 }
 
 *::-webkit-scrollbar {
   width: 8px;
-  /* background-color: rgba(0, 0, 0, 0); */
+  background-color: rgba(0, 0, 0, 0);
 }
  
 *::-webkit-scrollbar-track {
@@ -66,7 +70,7 @@
 }
  
 *::-webkit-scrollbar-thumb {
-  background-color: #333;
+  background-color: var(--scrollbar-color);
 }
 
 html{
