@@ -1,4 +1,10 @@
+# Notes
+
 for prod, push to github
 for dev, push to gitlab
 
 always start from dev
+
+## Requirements
+- smtp server
+- redis 
