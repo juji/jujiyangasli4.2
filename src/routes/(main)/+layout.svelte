@@ -1,12 +1,10 @@
 <script lang="ts">
 	import Container from '$lib/components/container.svelte';
-  import MouseWheel from '$lib/components/mouse-wheel-main.svelte';
 </script>
 
 
 
 <!-- How to comment out attributes -->
-<MouseWheel />
 <main
   {...{/* 
     this is a comment for attributes

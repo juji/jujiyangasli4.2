@@ -5,7 +5,7 @@
   import { page } from '$app/stores';
   
   import LoadingIndicator from '$lib/components/loading-indicator.svelte';
-  import Pwa from '$lib/components/pwa.svelte';
+  // import Pwa from '$lib/components/pwa.svelte';
   import Header from '$lib/components/header/index.svelte'
   import Footer from '$lib/components/footer/index.svelte'
   import Pendulum from '$lib/components/pendulum/index.svelte';
@@ -61,7 +61,7 @@
 
 </svelte:head>
 
-<Pwa />
+<!-- <Pwa /> -->
 <Pendulum />
 <Header />
 <slot/>

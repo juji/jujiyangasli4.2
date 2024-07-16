@@ -1,8 +1,4 @@
-<script lang="ts">
-  import MouseWheel from '$lib/components/mouse-wheel-pages.svelte';
-</script>
 
-<MouseWheel />
 <main>
   <slot/>
 </main>
