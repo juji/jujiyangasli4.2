@@ -13,11 +13,11 @@ it's alive with users and volunteers, *viola*!!
 
 Technologies used:
 [Next.js](https://nextjs.org/),
-[Material-UI](https://v4.mui.),
+[Material-UI](https://v4.mui.com),
 [ExpressJs](https://expressjs.com/),
 [stripe](https://stripe.com/),
 [min.io](https://min.io/),
-[Algolia](https://www.algolia.),
+[Algolia](https://www.algolia.com),
 [platform.sh](https://platform.sh).
 
 `
