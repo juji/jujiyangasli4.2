@@ -8,6 +8,10 @@
   export let data;
 </script>
 
+<svelte:head>
+  <link rel="canonical" href="https://jujiyangasli.com/" />
+</svelte:head>
+
 <Hello />
 <Works works={data.works} />
 <Play data={data.play} />
