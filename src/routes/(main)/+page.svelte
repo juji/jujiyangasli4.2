@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <link rel="canonical" href="https://jujiyangasli.com/" />
+  <link rel="canonical" href="https://jujiyangasli.com" />
 </svelte:head>
 
 <Hello />
