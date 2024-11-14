@@ -52,65 +52,65 @@
     
     .h2{
       animation-name: slideUpBackward, fadeOut;
-      animation-duration: 400ms;
+      animation-duration: 200ms;
       animation-fill-mode: both;
     }
   
     .par{
       animation-name: slideUpBackward, fadeOut;
-      animation-duration: 400ms;
-      animation-delay: 100ms;
+      animation-duration: 200ms;
+      animation-delay: 50ms;
       animation-fill-mode: both;
     }
 
     .email{
       animation-name: slideUpBackward, fadeOut;
-      animation-duration: 400ms;
-      animation-delay: 200ms;
+      animation-duration: 200ms;
+      animation-delay: 100ms;
       animation-fill-mode: both;
     }
 
     .city{
       animation-name: slideUpBackward, fadeOut;
-      animation-duration: 500ms;
-      animation-delay: 300ms;
+      animation-duration: 300ms;
+      animation-delay: 150ms;
       animation-fill-mode: both;
     }
 
     .links{
       #github{
         animation-name: slideLeftBackward, fadeOut;
-        animation-duration: 400ms;
-        animation-delay: 300ms;
+        animation-duration: 200ms;
+        animation-delay: 150ms;
         animation-fill-mode: both;
       }
   
       #npm{
         animation-name: slideLeftBackward, fadeOut;
-        animation-duration: 400ms;
-        animation-delay: 400ms;
+        animation-duration: 200ms;
+        animation-delay: 200ms;
         animation-fill-mode: both;
       }
   
       #linkedin{
         animation-name: slideLeftBackward, fadeOut;
-        animation-duration: 400ms;
-        animation-delay: 500ms;
+        animation-duration: 200ms;
+        animation-delay: 250ms;
         animation-fill-mode: both;
       }
   
       #skype{
         animation-name: slideLeftBackward, fadeOut;
-        animation-duration: 400ms;
-        animation-delay: 600ms;
+        animation-duration: 200ms;
+        animation-delay: 300ms;
         animation-fill-mode: both;
       }
     }
 
     .play{
       animation-name: slideUpBackward, fadeOut;
-      animation-duration: 400ms;
-      animation-delay: 700ms;
+      animation-duration: 200ms;
+      animation-delay: 350ms;
       animation-fill-mode: both;
     }
 

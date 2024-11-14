@@ -86,7 +86,7 @@
     {#each works as work, i }
     <Thumbnail
       paused={lastWork !== work.id}
-      animationDelay={500 + (i * 100)}
+      animationDelay={100 + (i * 100)}
       visible={anim ? visible : true}
       work={work} />
     {/each}
@@ -132,13 +132,13 @@
       h2{
         animation-name: slideLeftBackward, fadeOut;
         animation-fill-mode: both;
-        animation-duration: 200ms;
+        animation-duration: 100ms;
         animation-delay: 0ms;
       }
       .par{
         animation-name: slideLeftBackward, fadeOut;
         animation-fill-mode: both;
-        animation-duration: 200ms;
+        animation-duration: 100ms;
         animation-delay: 100ms;
       }
 

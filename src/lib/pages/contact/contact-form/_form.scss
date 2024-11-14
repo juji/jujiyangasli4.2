@@ -108,10 +108,10 @@
 
   &.anim{
 
-    --delay-init: 900ms;
+    --delay-init: 700ms;
     h3, label, input, textarea, button, .server-message{
       animation-name: fadeOut, slideUpBackward;
-      animation-duration: 300ms;
+      animation-duration: 200ms;
       animation-timing-function: ease-out;
       animation-fill-mode: both;
     }
@@ -119,26 +119,27 @@
     h3{
       animation-delay: var(--delay-init);
     }
+
     [for="contact-name"]{
       animation-delay: calc(var(--delay-init) + 110ms);
     }
     [id="contact-name"]{
-      animation-delay: calc(var(--delay-init) + 120ms);
+      animation-delay: calc(var(--delay-init) + 130ms);
     }
     [for="contact-email"]{
       animation-delay: calc(var(--delay-init) + 150ms);
     }
     [id="contact-email"]{
-      animation-delay: calc(var(--delay-init) + 190ms);
+      animation-delay: calc(var(--delay-init) + 170ms);
     }
     [for="contact-message"]{
-      animation-delay: calc(var(--delay-init) + 240ms);
+      animation-delay: calc(var(--delay-init) + 200ms);
     }
     [id="contact-message"]{
-      animation-delay: calc(var(--delay-init) + 300ms);
+      animation-delay: calc(var(--delay-init) + 250ms);
     }
     button{
-      animation-delay: calc(var(--delay-init) + 370ms);
+      animation-delay: calc(var(--delay-init) + 300ms);
     }
 
     &.visible{

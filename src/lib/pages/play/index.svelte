@@ -79,7 +79,7 @@ class:visible
     margin-bottom: 3rem;
 
     & h2, & p{
-      transition: translate 300ms, opacity 300ms;
+      transition: translate 200ms, opacity 200ms;
     }
 
     & h2{
@@ -97,7 +97,7 @@ class:visible
     gap: 21px;
 
     & a{
-      transition: translate 300ms, opacity 300ms;
+      transition: translate 200ms, opacity 200ms;
       display: block;
       overflow: hidden;
       border: 1px solid rgb(53, 53, 53);

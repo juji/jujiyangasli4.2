@@ -10,7 +10,7 @@
   }
   &.paused{
     animation-name: slideUpBackward, fadeOut;
-    animation-duration: 400ms;
+    animation-duration: 300ms;
     animation-fill-mode: both;
     pointer-events: none;
     &.visible{
