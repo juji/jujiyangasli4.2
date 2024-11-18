@@ -42,7 +42,9 @@
   }
 
   &[data-id="css"]{
-    width: 75px;
+    :global(img){
+      height: 65%;
+    }
   }
 
   &[data-id="docker"]{
