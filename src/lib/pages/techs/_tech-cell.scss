@@ -41,6 +41,10 @@
     }
   }
 
+  &[data-id="css"]{
+    width: 75px;
+  }
+
   &[data-id="docker"]{
     :global(img){
       width: min(120%, 150px);

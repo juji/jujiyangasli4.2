@@ -18,11 +18,11 @@ export const techs: TechItem[][] = [
       url: 'https://en.wikipedia.org/wiki/HTML5'
     },
     {
-      id: 'css3',
+      id: 'css',
       width: 24,
       height: 24,
-      title: 'CSS3',
-      image: '/images/tech/css3.svg',
+      title: 'CSS',
+      image: '/images/tech/css.svg',
       url: 'https://en.wikipedia.org/wiki/CSS'
     },
     {
