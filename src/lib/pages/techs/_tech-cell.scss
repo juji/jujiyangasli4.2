@@ -41,11 +41,11 @@
     }
   }
 
-  &[data-id="css"]{
-    :global(img){
-      height: 65%;
-    }
-  }
+  // &[data-id="css"]{
+  //   :global(img){
+  //     height: 65%;
+  //   }
+  // }
 
   &[data-id="docker"]{
     :global(img){
