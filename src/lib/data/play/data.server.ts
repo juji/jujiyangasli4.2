@@ -3,6 +3,12 @@ import type { Play } from './types'
 
 export const play:Play[] = [
   {
+    title: 'Grainy Bokeh',
+    id: 'grainy-bokeh',
+    image: 'https://jujiplay.com/bokeh-600.webp',
+    url: 'https://grainy-bokeh.jujiplay.com/'
+  },
+  {
     title: 'Boid',
     id: 'Boid',
     image: 'https://jujiplay.com/boids-600.webp',
@@ -14,10 +20,10 @@ export const play:Play[] = [
     image: 'https://jujiplay.com/clifford-dejong-600.webp',
     url: 'https://wallpaper.jujiplay.com/'
   },
-  {
-    title: 'Circular Orbit',
-    id: 'CircularOrbit',
-    image: 'https://jujiplay.com/circular-600.webp',
-    url: 'https://circular.jujiplay.com/'
-  },
+  // {
+  //   title: 'Circular Orbit',
+  //   id: 'CircularOrbit',
+  //   image: 'https://jujiplay.com/circular-600.webp',
+  //   url: 'https://circular.jujiplay.com/'
+  // },
 ]
