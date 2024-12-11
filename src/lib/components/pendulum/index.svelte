@@ -95,7 +95,7 @@
 />
 
 <div
-  class={`${'pendulum'}`} 
+  class={'pendulum'} 
   id="pendulum">
         
   <div class={`${'bg'} ${bgOn?'on':''}`}></div>

@@ -39,6 +39,7 @@
   "private": true,
   "scripts": {
     "tunnel": "ssh -R jujiyangasli:80:localhost:5173 serveo.net",
+    "tunnel:ngrok": "ngrok http --url=touched-quail-trusting.ngrok-free.app 5173",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",

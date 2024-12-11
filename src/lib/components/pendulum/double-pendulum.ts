@@ -48,12 +48,12 @@ class DoublePendulum {
   totalLine: number
   itt: number
   stopped: boolean
-  lineColor: string
 
   fillStyle = '#111'
-  lineWidth = 0.5
-  iPhoneLine = '#252525'
-  normalLine = '#424242'
+  lineWidth = 1
+  // iPhoneLine = '#252525'
+  // normalLine = '#424242'
+  lineColor = '#333333'
 
 
   constructor(params:DoublePendulumProps){
@@ -71,11 +71,11 @@ class DoublePendulum {
     this.width = window.innerWidth
     this.height = window.innerHeight + additionalHeight
     
-    let ua = navigator.userAgent.toLowerCase()
-    this.lineColor = 
-      // is iPhone ?
-      /ipad|iphone|ipod|safari/.test(ua) && !(/chrome/.test(ua))?
-        this.iPhoneLine : this.normalLine
+    // let ua = navigator.userAgent.toLowerCase()
+    // this.lineColor = 
+    //   // is iPhone ?
+    //   /ipad|iphone|ipod|safari/.test(ua) && !(/chrome/.test(ua))?
+    //     this.iPhoneLine : this.normalLine
     
     // console.log('this.lineColor', this.lineColor)
 
