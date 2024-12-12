@@ -3,8 +3,8 @@ import type { Play } from './types'
 
 export const play:Play[] = [
   {
-    title: 'Grainy Bokeh',
-    id: 'grainy-bokeh',
+    title: 'Grainy Thing',
+    id: 'grainy-thing',
     image: 'https://jujiplay.com/bokeh-600.webp',
     url: 'https://grainy-thing.jujiplay.com/'
   },
