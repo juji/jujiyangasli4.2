@@ -5,7 +5,7 @@ export const play:Play[] = [
   {
     title: 'Grainy Thing',
     id: 'grainy-thing',
-    image: 'https://jujiplay.com/bokeh-600.webp',
+    image: 'https://jujiplay.com/grainy-600.webp',
     url: 'https://grainy-thing.jujiplay.com/'
   },
   {
