@@ -6,7 +6,7 @@ export const play:Play[] = [
     title: 'Grainy Bokeh',
     id: 'grainy-bokeh',
     image: 'https://jujiplay.com/bokeh-600.webp',
-    url: 'https://grainy-bokeh.jujiplay.com/'
+    url: 'https://grainy-thing.jujiplay.com/'
   },
   {
     title: 'Boid',
