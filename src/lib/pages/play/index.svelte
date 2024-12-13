@@ -119,8 +119,14 @@ class:visible
 
       & > p {
         position:absolute;
-        bottom: 1rem;
-        right: 21px;
+        bottom: 0px;
+        right: 0px;
+        padding: 0.5rem 1rem;
+        border-top-left-radius: 0.5rem;
+        background: rgba(0,0,0,0.3);
+        color: #00ccc9;
+        border-left: 1px solid rgb(53, 53, 53);
+        border-top: 1px solid rgb(53, 53, 53);
       }
 
       & > img{
@@ -128,16 +134,18 @@ class:visible
         width: 100%;
         height: 100%;
         display: block;
-        transition: scale 200ms;
+        transition: scale 2000ms;
       }
 
       &:hover{
+        outline: 2px solid #00ccc9;
         & > img {
-          scale: 1.4;
+          scale: 2;
         }
       }
 
       &:active{
+        outline: 2px solid #009d9a;
         & > img {
           scale: 1;
         }
